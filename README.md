@@ -25,6 +25,8 @@ Ao escolher uma certificação, o tutor apresenta os domínios e recursos de est
 
 Cada skill inclui uma apresentação pronta em `references/inicio.md`. A Developer também traz o guia teórico em `references/guia-estudo.md`, para consultar e estudar sem gerar uma nova apostila a cada conversa. A teoria salva segue a baseline; detalhes de versões e requisitos atuais devem ser conferidos quando relevantes.
 
+Para quem prefere vídeo, a Developer inclui uma seleção de publicações da Anthropic em `references/videos-estudo.md`, com relação aos assuntos, capítulos públicos quando identificados e exercícios de revisão. Os vídeos complementam a teoria e a documentação; a curadoria explicita o que foi consultado e não pressupõe reprodução integral ou cobertura oficial da prova.
+
 As aulas, os exercícios e as provas acontecem na conversa. Os scripts fornecidos são auxiliares internos opcionais de cálculo e seleção de itens; não é necessário executar um simulador ou programa para estudar ou responder às questões.
 
 Para Developer Foundations, as opções são 16 questões, 32 questões ou um simulado de 53 questões conforme a baseline. A distribuição usa os pesos da baseline como aproximação e não é uma contagem oficial por domínio. A certificação pertence ao programa da Anthropic para parceiros; confirme elegibilidade e acesso na [FAQ oficial](https://anthropic-partners.skilljar.com/page/faq-certifications). O uso destas skills para estudar é independente da inscrição no exame.

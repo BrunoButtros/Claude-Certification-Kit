@@ -21,6 +21,7 @@ Base de conteúdo: 10/11/2026. Os domínios e pesos abaixo são os da baseline, 
 
 - [Conteúdo de estudo salvo](guia-estudo.md): explicações, exemplos e exercícios por domínio.
 - [Roteiro e leituras por assunto](roteiro-estudo.md).
+- [Vídeos de apoio da Anthropic](videos-estudo.md): seleção por assunto e perguntas para revisar depois.
 - [Trilha Claude Developer](https://anthropic-partners.skilljar.com/path/claude-developer).
 - [Preparação Developer Foundations](https://anthropic-partners.skilljar.com/path/claude-certified-developer-foundations).
 

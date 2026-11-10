@@ -27,6 +27,14 @@ As outras imagens mostram a trilha geral Developer: fundamentos e limitações d
 
 `references/guia-estudo.md` contém a teoria dos oito domínios, exemplos e exercícios respondidos na conversa. Para um pedido de conteúdo completo, disponibilizar esse arquivo e seu índice; para uma dúvida, localizar a seção pertinente e explicar aqui. Não recriar uma apostila, aplicativo ou programa de laboratório. Os links abaixo são complementos para aprofundar ou conferir uma dúvida, não uma exigência de navegação antes de mostrar o material salvo.
 
+## Vídeos oficiais como apoio
+
+O [canal Claude](https://www.youtube.com/@claude) também é um recurso de estudo. A seleção salva em `references/videos-estudo.md` reúne cinco vídeos publicados por Anthropic, com associação ao guia, capítulos públicos quando disponíveis e perguntas para responder depois. Ela cobre prompts, agentes, MCP e Claude Code. Não afirmar que já existe uma seleção específica suficiente para todos os domínios.
+
+Usar a sequência **ler o conceito → assistir ao trecho pertinente, se desejar → explicar a decisão aqui → praticar ou tentar novamente**. A curadoria não equivale a ter assistido aos vídeos: informa claramente onde a identificação se apoia em descrição/capítulos e onde só há título/contexto. Não usar um vídeo genérico como referência garantida para um erro sobre caching, streaming, batches, segurança ou avaliação.
+
+## Leituras por domínio
+
 | Domínio da baseline | O que explorar | Recurso e utilidade |
 |---|---|---|
 | D1 Applications & Integration | Messages API, streaming, erros, cache e batches | [Messages API](https://platform.claude.com/docs/en/api/messages); [streaming](https://platform.claude.com/docs/en/build-with-claude/streaming); [batches](https://platform.claude.com/docs/en/build-with-claude/batch-processing); [prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching). Cada página explica um mecanismo diferente de integração. |

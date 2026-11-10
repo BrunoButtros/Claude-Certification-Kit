@@ -157,6 +157,7 @@ def introduction(cfg, domains):
     rows = '\n'.join(f'| {d["name"]} | {d["weight_percent"]:g}% | {d["topics"]} |' for d in domains)
     materials = ('- [Conteúdo de estudo salvo](guia-estudo.md): explicações, exemplos e exercícios por domínio.\n'
                  '- [Roteiro e leituras por assunto](roteiro-estudo.md).\n'
+                 '- [Vídeos de apoio da Anthropic](videos-estudo.md): seleção por assunto e perguntas para revisar depois.\n'
                  '- [Trilha Claude Developer](https://anthropic-partners.skilljar.com/path/claude-developer).\n'
                  '- [Preparação Developer Foundations](https://anthropic-partners.skilljar.com/path/claude-certified-developer-foundations).'
                  if cfg['code'] == 'CCDV-F' else
@@ -213,6 +214,7 @@ def main():
         if cfg['code'] == 'CCDV-F':
             write(skill/'references'/'roteiro-estudo.md', (ROOT/'tools'/'roteiro-ccdv.md').read_text(encoding='utf-8'))
             write(skill/'references'/'guia-estudo.md', (ROOT/'tools'/'guia-ccdv.md').read_text(encoding='utf-8'))
+            write(skill/'references'/'videos-estudo.md', (ROOT/'tools'/'videos-ccdv.md').read_text(encoding='utf-8'))
         write(skill/'references'/'fontes.md',baseline[cfg['code']]['sources'])
         exercises='\n\n'.join(f'### {topic}\n\n{body}' for topic,body in cfg['exercises'])
         write(skill/'references'/'laboratorios.md',f'# Exercícios sugeridos para {cfg["code"]}\n\n**Atenção:** são exercícios pedagógicos gerados para esta skill, não exigências adicionais confirmadas pelo guia oficial. Usar apenas o escopo e domínios de `escopo-base.md`. Resolver na conversa, com explicação, texto ou pseudocódigo; só criar arquivos ou executar código se o estudante pedir explicitamente uma atividade de programação.\n\n{exercises}\n\n## Como avaliar\n\nPara cada atividade: estabelecer critério de aceite simples, pedir primeiro a decisão do estudante, apontar trade-off omitido, propor correção e registrar tópico que precisa de revisão.\n')

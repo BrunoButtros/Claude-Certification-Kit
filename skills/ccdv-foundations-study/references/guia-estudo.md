@@ -12,7 +12,7 @@ Este guia explica todos os tópicos listados na baseline da skill. Inclui exempl
 
 ## Como usar o material
 
-Leia o módulo, reproduza o exemplo no papel e explique a decisão sem consultar o texto. Depois faça o exercício guiado correspondente. Marque cada tópico como: “ainda não entendi”, “entendi com consulta” ou “consigo aplicar e justificar”. Uma resposta correta por memória não substitui a capacidade de explicar o motivo.
+Leia o módulo e explique uma decisão com suas palavras aqui na conversa. Se preferir apoio audiovisual, consulte os [vídeos selecionados por assunto](videos-estudo.md); cada indicação traz uma finalidade e uma pergunta de revisão. Os vídeos são opcionais e não substituem as referências para parâmetros exatos. Depois faça o exercício guiado correspondente. Marque cada tópico como: “ainda não entendi”, “entendi com consulta” ou “consigo aplicar e justificar”. Uma resposta correta por memória não substitui a capacidade de explicar o motivo.
 
 Todos os exemplos usam dados fictícios. Os JSONs ilustram partes de requisições e respostas; campos como `MODEL_ID` são marcadores. Os códigos são didáticos e não foram executados contra a API. Chamadas reais exigem conta autorizada, SDK compatível, modelo disponível, configuração segura de credenciais e podem gerar cobrança. Os exercícios deste guia são respondidos nesta conversa; os trechos de código são exemplos para leitura, sem execução obrigatória.
 
@@ -320,6 +320,8 @@ Mesmo usando uma biblioteca com loop pronto, a aplicação precisa definir quais
 
 Você deve escolher entre etapas fixas e decisões dinâmicas; diferenciar os cinco padrões; explicar a ida e volta de uma ferramenta; e mostrar como impedir loop infinito, repetição de efeitos e conclusão sem evidência.
 
+**Apoio em vídeo:** [V2 — Building more effective AI agents](videos-estudo.md#v2--agentes-e-escolha-de-arquitetura). Os capítulos públicos sobre arquiteturas simples e coordenação ajudam a orientar a discussão; depois justifique quando uma sequência fixa basta e quando a decomposição precisa ser dinâmica. A comparação específica com prompt chaining deve ser conferida também no artigo técnico citado neste módulo.
+
 ## 4. Prompt & Context Engineering — 11%
 
 ### 4.1 Instruções, exemplos e evidências
@@ -394,6 +396,8 @@ Nesse exemplo, compactar para “usuário quer cancelar P-101” perde fatos cr�
 ### 4.6 Verificação do módulo
 
 Você deve transformar um pedido vago em um contrato, identificar atalhos nos exemplos, usar separadores com propósito e produzir um resumo que preserve o que foi executado e o que ainda depende de decisão.
+
+**Apoio em vídeo:** [V3 — AI prompt engineering: A deep dive](videos-estudo.md#v3--refinamento-de-prompts). Após o trecho sobre refinamento, proponha uma alteração no prompt do classificador e um caso que permita verificar se ela ajudou. As perguntas de revisão são propostas desta skill, não uma transcrição do vídeo.
 
 ## 5. Tools & MCPs — 10,6%
 
@@ -484,6 +488,8 @@ Para estudo, associe transporte a comunicação, e não a política de acesso. U
 
 Você deve escrever um schema pequeno, preservar o identificador da chamada, retornar erros honestamente, distinguir dependência de paralelismo e explicar tools, resources, prompts e transportes sem confundi-los.
 
+**Apoio em vídeo:** [V1 — Building with MCP and the Claude API](videos-estudo.md#v1--mcp-e-claude-api). Use os capítulos públicos sobre MCP e contexto/ferramentas como complemento. Depois descreva, na conversa, o papel de um resource de política e de uma tool que altera um sistema; confira a resposta com a documentação do módulo.
+
 ## 6. Security & Safety — 8,1%
 
 ### 6.1 Prompt injection
@@ -568,6 +574,8 @@ Pré-requisitos para executá-lo: Claude Code instalado e configurado, acesso au
 ### 7.6 Verificação do módulo
 
 Você deve distinguir instruções de permissões, identificar o momento de um hook e planejar uma execução não interativa que tenha entrada, ferramentas, resultado e estado de falha bem definidos.
+
+**Apoio em vídeo:** [V4 — Claude Code best practices](videos-estudo.md#v4--práticas-de-claude-code) e [V5 — Building headless automation with Claude Code](videos-estudo.md#v5--automação-headless-como-conceito). A seleção confirma títulos e contexto público, não todos os comandos demonstrados. Depois descreva aqui instruções, permissões, entrada e saída de um job fictício; não é necessário executar ou programar nada para esse exercício.
 
 ## 8. Evaluation, Testing & Debugging — 2,6%
 
@@ -828,6 +836,11 @@ Ao terminar uma etapa, escreva uma decisão técnica e sua justificativa sem cop
 ## 14. Recursos oficiais e rastreabilidade
 
 Os links técnicos foram reunidos na preparação de 10/11/2026; são referências para os conceitos, não certificação de cobertura oficial do exame nem garantia de atualização permanente. Os portais autenticados da Academy não foram conferidos integralmente. Limites, preços, modelos e parâmetros podem mudar.
+
+### Apoio audiovisual salvo
+
+- [Canal Claude no YouTube](https://www.youtube.com/@claude).
+- [Seleção por assunto com perguntas de revisão](videos-estudo.md). A curadoria foi feita a partir de títulos, descrições e capítulos públicos em 10/11/2026, sem revisão integral dos vídeos ou das transcrições.
 
 ### Fontes de escopo desta preparação
 
