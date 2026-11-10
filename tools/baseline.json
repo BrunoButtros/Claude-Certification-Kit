@@ -1,0 +1,188 @@
+{
+  "CCAO-F": {
+    "domains": [
+      {
+        "id": "D1",
+        "name": "Prompting & Task Execution",
+        "weight_percent": 14.0,
+        "topics": "Prompt com contexto, instruções, restrições e formato esperado; quebrar pedidos complexos em etapas; refinar prompts para pesquisa, análise, redação e brainstorming"
+      },
+      {
+        "id": "D2",
+        "name": "Output Evaluation & Validation",
+        "weight_percent": 21.0,
+        "topics": "Avaliar precisão, completude, consistência e adequação ao público; detectar alucinação, afirmações sem fonte e viés; decidir quando precisa de revisão humana especialista; escolher formato (texto, dado estruturado, Artifact)"
+      },
+      {
+        "id": "D3",
+        "name": "Product & Model Selection",
+        "weight_percent": 12.0,
+        "topics": "Escolher entre Chat, Projects, Research e Artifacts; Haiku x Sonnet x Opus por velocidade, qualidade, complexidade e custo; quando continuar, resumir ou reiniciar a conversa"
+      },
+      {
+        "id": "D4",
+        "name": "Workflow Integration & Solution Design",
+        "weight_percent": 16.0,
+        "topics": "Identificar tarefas de negócio que o Claude apoia; desenhar fluxos de pesquisa, planejamento e refinamento iterativo; comunicar valor, limites, riscos e participação humana necessária"
+      },
+      {
+        "id": "D5",
+        "name": "Configuration & Knowledge Management",
+        "weight_percent": 12.0,
+        "topics": "Configurar Projects com instruções e materiais de referência; organizar arquivos e fontes conectadas (Google Drive, Gmail); manter instruções e configurações atualizadas"
+      },
+      {
+        "id": "D6",
+        "name": "Governance, Risk & Responsible Use",
+        "weight_percent": 15.0,
+        "topics": "O que é adequado para IA e o que exige especialista humano; dados sensíveis, confidencialidade, regulação e política interna; viés, desinformação, transparência"
+      },
+      {
+        "id": "D7",
+        "name": "Troubleshooting & Optimization",
+        "weight_percent": 10.0,
+        "topics": "Diagnosticar se o resultado ruim veio de instrução vaga, falta de contexto, fonte inadequada ou abordagem errada; corrigir revisando prompt, contexto, formato ou estrutura da tarefa"
+      }
+    ],
+    "scope": "# Escopo congelado: CCAO-F — 10/11/2026\n\n**Proveniência:** transcrição do documento enviado, não uma atualização do guia oficial. Os domínios e pesos devem ser conferidos no PDF oficial aplicável antes da prova.\n\n## Fatos da prova conforme documento\n\n- 60 questões, 120 minutos, em inglês, múltipla escolha e múltipla resposta; aprovação com 720 de 1000.\n- Público: profissionais que usam Claude como ferramenta de produtividade (operações, marketing, gestão de projetos, consultoria). Sem API e sem código.\n- As questões são cenários de trabalho: cobram julgamento (qual a melhor decisão), não decoreba.\n\n## Domínios, pesos e tópicos — cópia literal da tabela do arquivo\n\n| # | Domínio | Peso | O que cobra |\n|---|---|---|---|\n| 1 | Prompting & Task Execution | 14% | Prompt com contexto, instruções, restrições e formato esperado; quebrar pedidos complexos em etapas; refinar prompts para pesquisa, análise, redação e brainstorming |\n| 2 | Output Evaluation & Validation | 21% | Avaliar precisão, completude, consistência e adequação ao público; detectar alucinação, afirmações sem fonte e viés; decidir quando precisa de revisão humana especialista; escolher formato (texto, dado estruturado, Artifact) |\n| 3 | Product & Model Selection | 12% | Escolher entre Chat, Projects, Research e Artifacts; Haiku x Sonnet x Opus por velocidade, qualidade, complexidade e custo; quando continuar, resumir ou reiniciar a conversa |\n| 4 | Workflow Integration & Solution Design | 16% | Identificar tarefas de negócio que o Claude apoia; desenhar fluxos de pesquisa, planejamento e refinamento iterativo; comunicar valor, limites, riscos e participação humana necessária |\n| 5 | Configuration & Knowledge Management | 12% | Configurar Projects com instruções e materiais de referência; organizar arquivos e fontes conectadas (Google Drive, Gmail); manter instruções e configurações atualizadas |\n| 6 | Governance, Risk & Responsible Use | 15% | O que é adequado para IA e o que exige especialista humano; dados sensíveis, confidencialidade, regulação e política interna; viés, desinformação, transparência |\n| 7 | Troubleshooting & Optimization | 10% | Diagnosticar se o resultado ruim veio de instrução vaga, falta de contexto, fonte inadequada ou abordagem errada; corrigir revisando prompt, contexto, formato ou estrutura da tarefa |\n\n## Política de versão\n\nNão incorporar novos tópicos anunciados em versões posteriores até revisão explícita; marcar divergências conhecidas e data de verificação. Nunca tratar as notas de questões inventadas como pontuação escalonada oficial.\n",
+    "sources": "# Proveniência da base congelada\n\nDocumento: Prompts de diagnóstico e plano de estudo – Certificações Claude.md\n\nSHA-256: `48ade3473f155822b0cb782430ae8bc5b6a36c7b315e3f40301bc5eecfc67d64`\n\nOs links abaixo foram declarados na fonte de 10/11/2026. Preservados para rastreabilidade; não equivalem a validação atual dos guias oficiais nem autorizam atualização automática do escopo.\n\n\nOs pesos vieram de guias de terceiros que reproduzem os guias oficiais das provas (versão 1.0, julho de 2026). Antes de estudar, confira no guia oficial da Partner Academy. Os tópicos do Developer e da CCAR-F foram detalhados a partir da documentação e dos materiais de preparo; confira também.\n\n- [Domínios e pesos das 4 provas](https://claudearchitectcertification.com/blog/what-each-claude-certification-actually-tests-domain-by-domain)\n- [Guia de estudo CCAO-F (Tutorials Dojo)](https://tutorialsdojo.com/ccao-f-claude-certified-associate-foundations-study-guide/)\n- [Guia de estudo CCAR-P (Tutorials Dojo)](https://tutorialsdojo.com/ccar-p-claude-certified-architect-professional-study-guide/)\n- [FAQ oficial das certificações](https://anthropic-partners.skilljar.com/page/faq-certifications)\n- [Cursos preparatórios oficiais](https://anthropic-partners.skilljar.com/page/claude-certification-exam-prep-courses)\n"
+  },
+  "CCAR-F": {
+    "domains": [
+      {
+        "id": "D1",
+        "name": "Agentic Architecture & Orchestration",
+        "weight_percent": 27.0,
+        "topics": "Agentic loop e stop_reason; coordenador com subagentes (hub-and-spoke); passar contexto explicitamente aos subagentes; decomposição de tarefas; hooks para regras determinísticas x instrução no prompt; sessões (retomar, bifurcar); critérios de escalonamento para humano"
+      },
+      {
+        "id": "D2",
+        "name": "Claude Code Configuration & Workflows",
+        "weight_percent": 20.0,
+        "topics": "Hierarquia do CLAUDE.md (usuário, projeto, diretório); regras por caminho; slash commands e Skills; plan mode x execução direta; modo não interativo (-p) em CI com saída estruturada; refinamento iterativo"
+      },
+      {
+        "id": "D3",
+        "name": "Prompt Engineering & Structured Output",
+        "weight_percent": 20.0,
+        "topics": "Critérios explícitos em vez de instruções vagas; few-shot; tool use com JSON Schema para garantir estrutura; loop de validação e nova tentativa; Message Batches API para cargas sem urgência; revisão em múltiplas passadas"
+      },
+      {
+        "id": "D4",
+        "name": "Tool Design & MCP Integration",
+        "weight_percent": 18.0,
+        "topics": "Descrição da ferramenta como principal mecanismo de escolha; dividir ou consolidar ferramentas; respostas de erro estruturadas (categoria, se dá para tentar de novo); poucas ferramentas por agente; tool_choice; configuração de servidores MCP no projeto x no usuário; ferramentas nativas (Read, Grep, Glob, Edit)"
+      },
+      {
+        "id": "D5",
+        "name": "Context Management & Reliability",
+        "weight_percent": 15.0,
+        "topics": "Preservar fatos críticos do caso; perda de informação no meio de contextos longos; aparar saídas de ferramenta; propagação de erro entre agentes; compactação; revisão humana e calibração de confiança; rastreabilidade da fonte (provenance)"
+      }
+    ],
+    "scope": "# Escopo congelado: CCAR-F — 10/11/2026\n\n**Proveniência:** transcrição do documento enviado, não uma atualização do guia oficial. Os domínios e pesos devem ser conferidos no PDF oficial aplicável antes da prova.\n\n## Fatos da prova conforme documento\n\n- 60 questões, 120 minutos, em inglês; aprovação com 720 de 1000.\n- Público: arquitetos de solução que desenham, constroem e operam sistemas com agentes Claude em produção.\n- As questões partem de cenários de produção (ex.: agente de atendimento, pipeline de revisão de código em CI, sistema multiagente de pesquisa, extração estruturada de documentos) e cobram a decisão de arquitetura mais adequada.\n\n## Domínios, pesos e tópicos — cópia literal da tabela do arquivo\n\n| # | Domínio | Peso | O que cobra |\n|---|---|---|---|\n| 1 | Agentic Architecture & Orchestration | 27% | Agentic loop e stop_reason; coordenador com subagentes (hub-and-spoke); passar contexto explicitamente aos subagentes; decomposição de tarefas; hooks para regras determinísticas x instrução no prompt; sessões (retomar, bifurcar); critérios de escalonamento para humano |\n| 2 | Claude Code Configuration & Workflows | 20% | Hierarquia do CLAUDE.md (usuário, projeto, diretório); regras por caminho; slash commands e Skills; plan mode x execução direta; modo não interativo (-p) em CI com saída estruturada; refinamento iterativo |\n| 3 | Prompt Engineering & Structured Output | 20% | Critérios explícitos em vez de instruções vagas; few-shot; tool use com JSON Schema para garantir estrutura; loop de validação e nova tentativa; Message Batches API para cargas sem urgência; revisão em múltiplas passadas |\n| 4 | Tool Design & MCP Integration | 18% | Descrição da ferramenta como principal mecanismo de escolha; dividir ou consolidar ferramentas; respostas de erro estruturadas (categoria, se dá para tentar de novo); poucas ferramentas por agente; tool_choice; configuração de servidores MCP no projeto x no usuário; ferramentas nativas (Read, Grep, Glob, Edit) |\n| 5 | Context Management & Reliability | 15% | Preservar fatos críticos do caso; perda de informação no meio de contextos longos; aparar saídas de ferramenta; propagação de erro entre agentes; compactação; revisão humana e calibração de confiança; rastreabilidade da fonte (provenance) |\n\n## Política de versão\n\nNão incorporar novos tópicos anunciados em versões posteriores até revisão explícita; marcar divergências conhecidas e data de verificação. Nunca tratar as notas de questões inventadas como pontuação escalonada oficial.\n",
+    "sources": "# Proveniência da base congelada\n\nDocumento: Prompts de diagnóstico e plano de estudo – Certificações Claude.md\n\nSHA-256: `48ade3473f155822b0cb782430ae8bc5b6a36c7b315e3f40301bc5eecfc67d64`\n\nOs links abaixo foram declarados na fonte de 10/11/2026. Preservados para rastreabilidade; não equivalem a validação atual dos guias oficiais nem autorizam atualização automática do escopo.\n\n\nOs pesos vieram de guias de terceiros que reproduzem os guias oficiais das provas (versão 1.0, julho de 2026). Antes de estudar, confira no guia oficial da Partner Academy. Os tópicos do Developer e da CCAR-F foram detalhados a partir da documentação e dos materiais de preparo; confira também.\n\n- [Domínios e pesos das 4 provas](https://claudearchitectcertification.com/blog/what-each-claude-certification-actually-tests-domain-by-domain)\n- [Guia de estudo CCAO-F (Tutorials Dojo)](https://tutorialsdojo.com/ccao-f-claude-certified-associate-foundations-study-guide/)\n- [Guia de estudo CCAR-P (Tutorials Dojo)](https://tutorialsdojo.com/ccar-p-claude-certified-architect-professional-study-guide/)\n- [FAQ oficial das certificações](https://anthropic-partners.skilljar.com/page/faq-certifications)\n- [Cursos preparatórios oficiais](https://anthropic-partners.skilljar.com/page/claude-certification-exam-prep-courses)\n"
+  },
+  "CCAR-P": {
+    "domains": [
+      {
+        "id": "D1",
+        "name": "Solution Design & Architecture",
+        "weight_percent": 17.0,
+        "topics": "Ligar decisões de arquitetura a resultados de negócio mensuráveis; fluxo ponta a ponta (entrada, processamento, saída, feedback); escolher entre workflow, agente, LLM aumentado ou multiagente; decompor problemas e orquestrar ferramentas e agentes"
+      },
+      {
+        "id": "D2",
+        "name": "Claude Models, Prompting & Context Engineering",
+        "weight_percent": 13.0,
+        "topics": "Trade-offs de modelo (complexidade, qualidade, velocidade, tamanho de contexto, custo); system prompts, templates, zero-shot, few-shot, raciocínio estruturado, guardrails; gestão de contexto e tokens com prompt caching, prompts modulares e Skills"
+      },
+      {
+        "id": "D3",
+        "name": "Integration",
+        "weight_percent": 19.0,
+        "topics": "Menor privilégio para ferramentas e agentes; pipeline de geração aumentada por recuperação (RAG): chunking, indexação, recuperação; escolher entre MCP, APIs, CLIs e comunicação agente-agente; observabilidade; descoberta progressiva x contexto monolítico grande"
+      },
+      {
+        "id": "D4",
+        "name": "Evaluation, Testing & Optimization",
+        "weight_percent": 16.0,
+        "topics": "Métricas de precisão, latência, custo, segurança; datasets de avaliação com revisão automática e humana; teste A/B; diagnóstico de alucinação, falha de prompt e modelo inadequado; monitoramento para otimizar tokens, tempo de resposta e custo"
+      },
+      {
+        "id": "D5",
+        "name": "Governance, Safety & Risk Management",
+        "weight_percent": 14.0,
+        "topics": "Guardrails contra mau uso e modos de falha; revisão humana (human-in-the-loop) para saídas sensíveis ou de alto impacto; conformidade (GDPR, HIPAA, FedRAMP, e no Brasil a LGPD); viés, equidade, transparência, privacidade"
+      },
+      {
+        "id": "D6",
+        "name": "Stakeholder Communication & Lifecycle Management",
+        "weight_percent": 14.0,
+        "topics": "Descoberta estruturada e levantamento de requisitos; explicar decisões e trade-offs para público técnico e não técnico; documentação; gerir feedback do desenho à melhoria contínua"
+      },
+      {
+        "id": "D7",
+        "name": "Developer Productivity & Operational Enablement",
+        "weight_percent": 7.0,
+        "topics": "Configurar Claude Code e ambientes compartilhados de equipe; fluxos de código, teste e documentação assistidos por IA; usar Claude para depurar e apoiar a operação em produção"
+      }
+    ],
+    "scope": "# Escopo congelado: CCAR-P — 10/11/2026\n\n**Proveniência:** transcrição do documento enviado, não uma atualização do guia oficial. Os domínios e pesos devem ser conferidos no PDF oficial aplicável antes da prova.\n\n## Fatos da prova conforme documento\n\n- 63 questões, 120 minutos, em inglês, múltipla escolha e múltipla resposta; aprovação com 720 de 1000.\n- Público: arquitetos e líderes técnicos que respondem de ponta a ponta por soluções Claude em produção, da descoberta à operação.\n- A CCAR-F não é pré-requisito, mas a prova assume esse conhecimento.\n- Questões de cenário corporativo: cobram trade-offs entre negócio, risco, custo e operação.\n\n## Domínios, pesos e tópicos — cópia literal da tabela do arquivo\n\n| # | Domínio | Peso | O que cobra |\n|---|---|---|---|\n| 1 | Solution Design & Architecture | 17% | Ligar decisões de arquitetura a resultados de negócio mensuráveis; fluxo ponta a ponta (entrada, processamento, saída, feedback); escolher entre workflow, agente, LLM aumentado ou multiagente; decompor problemas e orquestrar ferramentas e agentes |\n| 2 | Claude Models, Prompting & Context Engineering | 13% | Trade-offs de modelo (complexidade, qualidade, velocidade, tamanho de contexto, custo); system prompts, templates, zero-shot, few-shot, raciocínio estruturado, guardrails; gestão de contexto e tokens com prompt caching, prompts modulares e Skills |\n| 3 | Integration | 19% | Menor privilégio para ferramentas e agentes; pipeline de geração aumentada por recuperação (RAG): chunking, indexação, recuperação; escolher entre MCP, APIs, CLIs e comunicação agente-agente; observabilidade; descoberta progressiva x contexto monolítico grande |\n| 4 | Evaluation, Testing & Optimization | 16% | Métricas de precisão, latência, custo, segurança; datasets de avaliação com revisão automática e humana; teste A/B; diagnóstico de alucinação, falha de prompt e modelo inadequado; monitoramento para otimizar tokens, tempo de resposta e custo |\n| 5 | Governance, Safety & Risk Management | 14% | Guardrails contra mau uso e modos de falha; revisão humana (human-in-the-loop) para saídas sensíveis ou de alto impacto; conformidade (GDPR, HIPAA, FedRAMP, e no Brasil a LGPD); viés, equidade, transparência, privacidade |\n| 6 | Stakeholder Communication & Lifecycle Management | 14% | Descoberta estruturada e levantamento de requisitos; explicar decisões e trade-offs para público técnico e não técnico; documentação; gerir feedback do desenho à melhoria contínua |\n| 7 | Developer Productivity & Operational Enablement | 7% | Configurar Claude Code e ambientes compartilhados de equipe; fluxos de código, teste e documentação assistidos por IA; usar Claude para depurar e apoiar a operação em produção |\n\n## Política de versão\n\nNão incorporar novos tópicos anunciados em versões posteriores até revisão explícita; marcar divergências conhecidas e data de verificação. Nunca tratar as notas de questões inventadas como pontuação escalonada oficial.\n",
+    "sources": "# Proveniência da base congelada\n\nDocumento: Prompts de diagnóstico e plano de estudo – Certificações Claude.md\n\nSHA-256: `48ade3473f155822b0cb782430ae8bc5b6a36c7b315e3f40301bc5eecfc67d64`\n\nOs links abaixo foram declarados na fonte de 10/11/2026. Preservados para rastreabilidade; não equivalem a validação atual dos guias oficiais nem autorizam atualização automática do escopo.\n\n\nOs pesos vieram de guias de terceiros que reproduzem os guias oficiais das provas (versão 1.0, julho de 2026). Antes de estudar, confira no guia oficial da Partner Academy. Os tópicos do Developer e da CCAR-F foram detalhados a partir da documentação e dos materiais de preparo; confira também.\n\n- [Domínios e pesos das 4 provas](https://claudearchitectcertification.com/blog/what-each-claude-certification-actually-tests-domain-by-domain)\n- [Guia de estudo CCAO-F (Tutorials Dojo)](https://tutorialsdojo.com/ccao-f-claude-certified-associate-foundations-study-guide/)\n- [Guia de estudo CCAR-P (Tutorials Dojo)](https://tutorialsdojo.com/ccar-p-claude-certified-architect-professional-study-guide/)\n- [FAQ oficial das certificações](https://anthropic-partners.skilljar.com/page/faq-certifications)\n- [Cursos preparatórios oficiais](https://anthropic-partners.skilljar.com/page/claude-certification-exam-prep-courses)\n"
+  },
+  "CCDV-F": {
+    "domains": [
+      {
+        "id": "D1",
+        "name": "Applications & Integration",
+        "weight_percent": 33.1,
+        "topics": "Messages API (roles, system, max_tokens, stop_reason), streaming, tratamento de erros e retries (429, 529), prompt caching (cache_control, tempo de vida do cache), Message Batches API, structured outputs, extended thinking, SDKs, Files API, desenho de aplicação por interface"
+      },
+      {
+        "id": "D2",
+        "name": "Model Selection & Optimization",
+        "weight_percent": 16.8,
+        "topics": "Opus x Sonnet x Haiku por qualidade, latência e custo; janela de contexto; redução de custo e latência com caching, batches e roteamento entre modelos"
+      },
+      {
+        "id": "D3",
+        "name": "Agents & Workflows",
+        "weight_percent": 14.7,
+        "topics": "Agentic loop guiado por stop_reason; padrões de workflow (prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer); quando usar workflow x agente; subagentes; Claude Agent SDK"
+      },
+      {
+        "id": "D4",
+        "name": "Prompt & Context Engineering",
+        "weight_percent": 11.0,
+        "topics": "System prompt, tags XML, few-shot, raciocínio passo a passo, posicionamento em contexto longo, gestão e compactação de contexto"
+      },
+      {
+        "id": "D5",
+        "name": "Tools & MCPs",
+        "weight_percent": 10.6,
+        "topics": "Definição de ferramenta com JSON Schema, descrições, tool_choice, chamadas paralelas, tool_result com is_error; Model Context Protocol (MCP): tools, resources, prompts e transportes"
+      },
+      {
+        "id": "D6",
+        "name": "Security & Safety",
+        "weight_percent": 8.1,
+        "topics": "Injeção de prompt (prompt injection), menor privilégio, dados pessoais, guardrails, aprovação humana para ações de risco"
+      },
+      {
+        "id": "D7",
+        "name": "Claude Code",
+        "weight_percent": 3.1,
+        "topics": "CLAUDE.md, permissões, slash commands, hooks, modo não interativo (-p) em CI"
+      },
+      {
+        "id": "D8",
+        "name": "Evaluation, Testing & Debugging",
+        "weight_percent": 2.6,
+        "topics": "Conjuntos de avaliação, LLM como juiz (LLM-as-judge), testes de regressão de prompt, depuração de respostas"
+      }
+    ],
+    "scope": "# Escopo congelado: CCDV-F — 10/11/2026\n\n**Proveniência:** transcrição do documento enviado, não uma atualização do guia oficial. Os domínios e pesos devem ser conferidos no PDF oficial aplicável antes da prova.\n\n## Fatos da prova conforme documento\n\n- 53 questões, 120 minutos, em inglês, múltipla escolha e múltipla resposta; aprovação com 720 de 1000.\n- Público: desenvolvedores e engenheiros de IA que constroem aplicações, agentes, integrações e pipelines com a Claude API.\n- Questões de cenário: cobram a melhor decisão técnica, inclusive detalhes exatos da API.\n\n## Domínios, pesos e tópicos — cópia literal da tabela do arquivo\n\n| # | Domínio | Peso | O que cobra |\n|---|---|---|---|\n| 1 | Applications & Integration | 33,1% | Messages API (roles, system, max_tokens, stop_reason), streaming, tratamento de erros e retries (429, 529), prompt caching (cache_control, tempo de vida do cache), Message Batches API, structured outputs, extended thinking, SDKs, Files API, desenho de aplicação por interface |\n| 2 | Model Selection & Optimization | 16,8% | Opus x Sonnet x Haiku por qualidade, latência e custo; janela de contexto; redução de custo e latência com caching, batches e roteamento entre modelos |\n| 3 | Agents & Workflows | 14,7% | Agentic loop guiado por stop_reason; padrões de workflow (prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer); quando usar workflow x agente; subagentes; Claude Agent SDK |\n| 4 | Prompt & Context Engineering | 11% | System prompt, tags XML, few-shot, raciocínio passo a passo, posicionamento em contexto longo, gestão e compactação de contexto |\n| 5 | Tools & MCPs | 10,6% | Definição de ferramenta com JSON Schema, descrições, tool_choice, chamadas paralelas, tool_result com is_error; Model Context Protocol (MCP): tools, resources, prompts e transportes |\n| 6 | Security & Safety | 8,1% | Injeção de prompt (prompt injection), menor privilégio, dados pessoais, guardrails, aprovação humana para ações de risco |\n| 7 | Claude Code | 3,1% | CLAUDE.md, permissões, slash commands, hooks, modo não interativo (-p) em CI |\n| 8 | Evaluation, Testing & Debugging | 2,6% | Conjuntos de avaliação, LLM como juiz (LLM-as-judge), testes de regressão de prompt, depuração de respostas |\n\n## Política de versão\n\nNão incorporar novos tópicos anunciados em versões posteriores até revisão explícita; marcar divergências conhecidas e data de verificação. Nunca tratar as notas de questões inventadas como pontuação escalonada oficial.\n",
+    "sources": "# Proveniência da base congelada\n\nDocumento: Prompts de diagnóstico e plano de estudo – Certificações Claude.md\n\nSHA-256: `48ade3473f155822b0cb782430ae8bc5b6a36c7b315e3f40301bc5eecfc67d64`\n\nOs links abaixo foram declarados na fonte de 10/11/2026. Preservados para rastreabilidade; não equivalem a validação atual dos guias oficiais nem autorizam atualização automática do escopo.\n\n\nOs pesos vieram de guias de terceiros que reproduzem os guias oficiais das provas (versão 1.0, julho de 2026). Antes de estudar, confira no guia oficial da Partner Academy. Os tópicos do Developer e da CCAR-F foram detalhados a partir da documentação e dos materiais de preparo; confira também.\n\n- [Domínios e pesos das 4 provas](https://claudearchitectcertification.com/blog/what-each-claude-certification-actually-tests-domain-by-domain)\n- [Guia de estudo CCAO-F (Tutorials Dojo)](https://tutorialsdojo.com/ccao-f-claude-certified-associate-foundations-study-guide/)\n- [Guia de estudo CCAR-P (Tutorials Dojo)](https://tutorialsdojo.com/ccar-p-claude-certified-architect-professional-study-guide/)\n- [FAQ oficial das certificações](https://anthropic-partners.skilljar.com/page/faq-certifications)\n- [Cursos preparatórios oficiais](https://anthropic-partners.skilljar.com/page/claude-certification-exam-prep-courses)\n"
+  }
+}

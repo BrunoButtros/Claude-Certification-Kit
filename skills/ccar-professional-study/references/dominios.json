@@ -1,0 +1,70 @@
+{
+  "exam_code": "CCAR-P",
+  "exam_title": "Claude Certified Architect – Professional",
+  "exam_questions": 63,
+  "duration_minutes": 120,
+  "source_baseline": "2026-11-10",
+  "version": "1.0.1",
+  "quick_distribution": {
+    "D1": 2,
+    "D2": 2,
+    "D3": 2,
+    "D4": 2,
+    "D5": 2,
+    "D6": 2,
+    "D7": 1
+  },
+  "deep_distribution": {
+    "D1": 5,
+    "D2": 3,
+    "D3": 5,
+    "D4": 4,
+    "D5": 4,
+    "D6": 4,
+    "D7": 3
+  },
+  "domains": [
+    {
+      "id": "D1",
+      "name": "Solution Design & Architecture",
+      "weight_percent": 17.0,
+      "topics": "Ligar decisões de arquitetura a resultados de negócio mensuráveis; fluxo ponta a ponta (entrada, processamento, saída, feedback); escolher entre workflow, agente, LLM aumentado ou multiagente; decompor problemas e orquestrar ferramentas e agentes"
+    },
+    {
+      "id": "D2",
+      "name": "Claude Models, Prompting & Context Engineering",
+      "weight_percent": 13.0,
+      "topics": "Trade-offs de modelo (complexidade, qualidade, velocidade, tamanho de contexto, custo); system prompts, templates, zero-shot, few-shot, raciocínio estruturado, guardrails; gestão de contexto e tokens com prompt caching, prompts modulares e Skills"
+    },
+    {
+      "id": "D3",
+      "name": "Integration",
+      "weight_percent": 19.0,
+      "topics": "Menor privilégio para ferramentas e agentes; pipeline de geração aumentada por recuperação (RAG): chunking, indexação, recuperação; escolher entre MCP, APIs, CLIs e comunicação agente-agente; observabilidade; descoberta progressiva x contexto monolítico grande"
+    },
+    {
+      "id": "D4",
+      "name": "Evaluation, Testing & Optimization",
+      "weight_percent": 16.0,
+      "topics": "Métricas de precisão, latência, custo, segurança; datasets de avaliação com revisão automática e humana; teste A/B; diagnóstico de alucinação, falha de prompt e modelo inadequado; monitoramento para otimizar tokens, tempo de resposta e custo"
+    },
+    {
+      "id": "D5",
+      "name": "Governance, Safety & Risk Management",
+      "weight_percent": 14.0,
+      "topics": "Guardrails contra mau uso e modos de falha; revisão humana (human-in-the-loop) para saídas sensíveis ou de alto impacto; conformidade (GDPR, HIPAA, FedRAMP, e no Brasil a LGPD); viés, equidade, transparência, privacidade"
+    },
+    {
+      "id": "D6",
+      "name": "Stakeholder Communication & Lifecycle Management",
+      "weight_percent": 14.0,
+      "topics": "Descoberta estruturada e levantamento de requisitos; explicar decisões e trade-offs para público técnico e não técnico; documentação; gerir feedback do desenho à melhoria contínua"
+    },
+    {
+      "id": "D7",
+      "name": "Developer Productivity & Operational Enablement",
+      "weight_percent": 7.0,
+      "topics": "Configurar Claude Code e ambientes compartilhados de equipe; fluxos de código, teste e documentação assistidos por IA; usar Claude para depurar e apoiar a operação em produção"
+    }
+  ]
+}

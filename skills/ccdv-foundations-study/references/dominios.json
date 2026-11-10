@@ -1,0 +1,78 @@
+{
+  "exam_code": "CCDV-F",
+  "exam_title": "Claude Certified Developer – Foundations",
+  "exam_questions": 53,
+  "duration_minutes": 120,
+  "source_baseline": "2026-11-10",
+  "version": "1.0.1",
+  "quick_distribution": {
+    "D1": 5,
+    "D2": 2,
+    "D3": 2,
+    "D4": 2,
+    "D5": 2,
+    "D6": 1,
+    "D7": 1,
+    "D8": 1
+  },
+  "deep_distribution": {
+    "D1": 11,
+    "D2": 6,
+    "D3": 6,
+    "D4": 4,
+    "D5": 4,
+    "D6": 3,
+    "D7": 3,
+    "D8": 3
+  },
+  "domains": [
+    {
+      "id": "D1",
+      "name": "Applications & Integration",
+      "weight_percent": 33.1,
+      "topics": "Messages API (roles, system, max_tokens, stop_reason), streaming, tratamento de erros e retries (429, 529), prompt caching (cache_control, tempo de vida do cache), Message Batches API, structured outputs, extended thinking, SDKs, Files API, desenho de aplicação por interface"
+    },
+    {
+      "id": "D2",
+      "name": "Model Selection & Optimization",
+      "weight_percent": 16.8,
+      "topics": "Opus x Sonnet x Haiku por qualidade, latência e custo; janela de contexto; redução de custo e latência com caching, batches e roteamento entre modelos"
+    },
+    {
+      "id": "D3",
+      "name": "Agents & Workflows",
+      "weight_percent": 14.7,
+      "topics": "Agentic loop guiado por stop_reason; padrões de workflow (prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer); quando usar workflow x agente; subagentes; Claude Agent SDK"
+    },
+    {
+      "id": "D4",
+      "name": "Prompt & Context Engineering",
+      "weight_percent": 11.0,
+      "topics": "System prompt, tags XML, few-shot, raciocínio passo a passo, posicionamento em contexto longo, gestão e compactação de contexto"
+    },
+    {
+      "id": "D5",
+      "name": "Tools & MCPs",
+      "weight_percent": 10.6,
+      "topics": "Definição de ferramenta com JSON Schema, descrições, tool_choice, chamadas paralelas, tool_result com is_error; Model Context Protocol (MCP): tools, resources, prompts e transportes"
+    },
+    {
+      "id": "D6",
+      "name": "Security & Safety",
+      "weight_percent": 8.1,
+      "topics": "Injeção de prompt (prompt injection), menor privilégio, dados pessoais, guardrails, aprovação humana para ações de risco"
+    },
+    {
+      "id": "D7",
+      "name": "Claude Code",
+      "weight_percent": 3.1,
+      "topics": "CLAUDE.md, permissões, slash commands, hooks, modo não interativo (-p) em CI"
+    },
+    {
+      "id": "D8",
+      "name": "Evaluation, Testing & Debugging",
+      "weight_percent": 2.6,
+      "topics": "Conjuntos de avaliação, LLM como juiz (LLM-as-judge), testes de regressão de prompt, depuração de respostas"
+    }
+  ]
+}

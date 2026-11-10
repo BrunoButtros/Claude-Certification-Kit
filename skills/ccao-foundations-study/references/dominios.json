@@ -1,0 +1,70 @@
+{
+  "exam_code": "CCAO-F",
+  "exam_title": "Claude Certified Associate – Foundations",
+  "exam_questions": 60,
+  "duration_minutes": 120,
+  "source_baseline": "2026-11-10",
+  "version": "1.0.1",
+  "quick_distribution": {
+    "D1": 2,
+    "D2": 3,
+    "D3": 2,
+    "D4": 2,
+    "D5": 2,
+    "D6": 2,
+    "D7": 1
+  },
+  "deep_distribution": {
+    "D1": 4,
+    "D2": 6,
+    "D3": 3,
+    "D4": 4,
+    "D5": 3,
+    "D6": 5,
+    "D7": 3
+  },
+  "domains": [
+    {
+      "id": "D1",
+      "name": "Prompting & Task Execution",
+      "weight_percent": 14.0,
+      "topics": "Prompt com contexto, instruções, restrições e formato esperado; quebrar pedidos complexos em etapas; refinar prompts para pesquisa, análise, redação e brainstorming"
+    },
+    {
+      "id": "D2",
+      "name": "Output Evaluation & Validation",
+      "weight_percent": 21.0,
+      "topics": "Avaliar precisão, completude, consistência e adequação ao público; detectar alucinação, afirmações sem fonte e viés; decidir quando precisa de revisão humana especialista; escolher formato (texto, dado estruturado, Artifact)"
+    },
+    {
+      "id": "D3",
+      "name": "Product & Model Selection",
+      "weight_percent": 12.0,
+      "topics": "Escolher entre Chat, Projects, Research e Artifacts; Haiku x Sonnet x Opus por velocidade, qualidade, complexidade e custo; quando continuar, resumir ou reiniciar a conversa"
+    },
+    {
+      "id": "D4",
+      "name": "Workflow Integration & Solution Design",
+      "weight_percent": 16.0,
+      "topics": "Identificar tarefas de negócio que o Claude apoia; desenhar fluxos de pesquisa, planejamento e refinamento iterativo; comunicar valor, limites, riscos e participação humana necessária"
+    },
+    {
+      "id": "D5",
+      "name": "Configuration & Knowledge Management",
+      "weight_percent": 12.0,
+      "topics": "Configurar Projects com instruções e materiais de referência; organizar arquivos e fontes conectadas (Google Drive, Gmail); manter instruções e configurações atualizadas"
+    },
+    {
+      "id": "D6",
+      "name": "Governance, Risk & Responsible Use",
+      "weight_percent": 15.0,
+      "topics": "O que é adequado para IA e o que exige especialista humano; dados sensíveis, confidencialidade, regulação e política interna; viés, desinformação, transparência"
+    },
+    {
+      "id": "D7",
+      "name": "Troubleshooting & Optimization",
+      "weight_percent": 10.0,
+      "topics": "Diagnosticar se o resultado ruim veio de instrução vaga, falta de contexto, fonte inadequada ou abordagem errada; corrigir revisando prompt, contexto, formato ou estrutura da tarefa"
+    }
+  ]
+}

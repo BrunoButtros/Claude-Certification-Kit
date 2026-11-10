@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.1",
+  "exam_code": "CCAR-F",
+  "skill_version": "1.0.1",
+  "source_baseline": "2026-11-10",
+  "session_date": null,
+  "study_goal": null,
+  "planned_exam_date": null,
+  "study_schedule": {
+    "days_per_week": [],
+    "hours_per_day": null
+  },
+  "profile": {
+    "experience": null,
+    "english": null,
+    "learning_style": null
+  },
+  "evaluations": [],
+  "active_assessment": null,
+  "topic_history": [],
+  "domains": {
+    "D1": {
+      "name": "Agentic Architecture & Orchestration",
+      "questions_answered": 0,
+      "correct": 0,
+      "accuracy_percent": null,
+      "false_certainty_count": 0,
+      "error_topics": [],
+      "notes": []
+    },
+    "D2": {
+      "name": "Claude Code Configuration & Workflows",
+      "questions_answered": 0,
+      "correct": 0,
+      "accuracy_percent": null,
+      "false_certainty_count": 0,
+      "error_topics": [],
+      "notes": []
+    },
+    "D3": {
+      "name": "Prompt Engineering & Structured Output",
+      "questions_answered": 0,
+      "correct": 0,
+      "accuracy_percent": null,
+      "false_certainty_count": 0,
+      "error_topics": [],
+      "notes": []
+    },
+    "D4": {
+      "name": "Tool Design & MCP Integration",
+      "questions_answered": 0,
+      "correct": 0,
+      "accuracy_percent": null,
+      "false_certainty_count": 0,
+      "error_topics": [],
+      "notes": []
+    },
+    "D5": {
+      "name": "Context Management & Reliability",
+      "questions_answered": 0,
+      "correct": 0,
+      "accuracy_percent": null,
+      "false_certainty_count": 0,
+      "error_topics": [],
+      "notes": []
+    }
+  },
+  "next_actions": [],
+  "notes": [
+    "Preencher com resultados observados; não é boletim oficial."
+  ]
+}

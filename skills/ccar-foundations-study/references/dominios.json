@@ -1,0 +1,54 @@
+{
+  "exam_code": "CCAR-F",
+  "exam_title": "Claude Certified Architect – Foundations",
+  "exam_questions": 60,
+  "duration_minutes": 120,
+  "source_baseline": "2026-11-10",
+  "version": "1.0.1",
+  "quick_distribution": {
+    "D1": 3,
+    "D2": 3,
+    "D3": 2,
+    "D4": 2,
+    "D5": 2
+  },
+  "deep_distribution": {
+    "D1": 7,
+    "D2": 5,
+    "D3": 5,
+    "D4": 4,
+    "D5": 4
+  },
+  "domains": [
+    {
+      "id": "D1",
+      "name": "Agentic Architecture & Orchestration",
+      "weight_percent": 27.0,
+      "topics": "Agentic loop e stop_reason; coordenador com subagentes (hub-and-spoke); passar contexto explicitamente aos subagentes; decomposição de tarefas; hooks para regras determinísticas x instrução no prompt; sessões (retomar, bifurcar); critérios de escalonamento para humano"
+    },
+    {
+      "id": "D2",
+      "name": "Claude Code Configuration & Workflows",
+      "weight_percent": 20.0,
+      "topics": "Hierarquia do CLAUDE.md (usuário, projeto, diretório); regras por caminho; slash commands e Skills; plan mode x execução direta; modo não interativo (-p) em CI com saída estruturada; refinamento iterativo"
+    },
+    {
+      "id": "D3",
+      "name": "Prompt Engineering & Structured Output",
+      "weight_percent": 20.0,
+      "topics": "Critérios explícitos em vez de instruções vagas; few-shot; tool use com JSON Schema para garantir estrutura; loop de validação e nova tentativa; Message Batches API para cargas sem urgência; revisão em múltiplas passadas"
+    },
+    {
+      "id": "D4",
+      "name": "Tool Design & MCP Integration",
+      "weight_percent": 18.0,
+      "topics": "Descrição da ferramenta como principal mecanismo de escolha; dividir ou consolidar ferramentas; respostas de erro estruturadas (categoria, se dá para tentar de novo); poucas ferramentas por agente; tool_choice; configuração de servidores MCP no projeto x no usuário; ferramentas nativas (Read, Grep, Glob, Edit)"
+    },
+    {
+      "id": "D5",
+      "name": "Context Management & Reliability",
+      "weight_percent": 15.0,
+      "topics": "Preservar fatos críticos do caso; perda de informação no meio de contextos longos; aparar saídas de ferramenta; propagação de erro entre agentes; compactação; revisão humana e calibração de confiança; rastreabilidade da fonte (provenance)"
+    }
+  ]
+}
