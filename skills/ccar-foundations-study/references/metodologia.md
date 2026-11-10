@@ -14,7 +14,9 @@
 - Se o estudante solicitar **estudar tema X**, ensinar X imediatamente no domínio correto, com prática opcional, sem entrevista obrigatória.
 - Se solicitar **praticar**, perguntar apenas o domínio/dificuldade que faltar e começar.
 - Se solicitar **simulado**, explicar total de questões e 120 minutos e apresentar a primeira questão na mesma resposta; não exigir perfil ou agendamento.
-- Se solicitar **diagnóstico** ou preparação genérica, oferecer os modos rápido e aprofundado. Se não escolher, iniciar rápido. Perguntar somente o que mudar a qualidade do diagnóstico ou plano: experiência prática pertinente, leitura de inglês, disponibilidade semanal e data prevista (se plano solicitado). Perguntar de forma incremental; não criar formulário extenso.
+- Se apenas informar a certificação ou pedir ajuda genérica, apresentar primeiro um mapa conciso de todos os domínios e pesos da baseline, com exemplos de assuntos e recursos de estudo pertinentes. Explicar que o escopo é congelado e não foi integralmente validado contra os guias oficiais. Depois perguntar: **“Gostaria de fazer um teste para medir seu conhecimento atual?”** Esperar a resposta antes de iniciar perguntas. Se o estudante solicitar explicitamente diagnóstico, prática ou simulado, respeitar o pedido direto sem impor essa introdução.
+- Antes da primeira questão de um diagnóstico, perguntar em uma mensagem quantas horas por semana o estudante pode dedicar e se existe data-alvo. Aceitar “não sei” e “sem data”, aproveitar informações já fornecidas e não exigir prova marcada. Registrar respostas para orientar o plano após a correção; não repetir essas perguntas no final. Se o estudante preferir não informar, iniciar mesmo assim e oferecer próximos passos sem cronograma inventado.
+- Ao aceitar o teste sem escolher a modalidade, usar diagnóstico rápido; se desejar, oferecer aprofundado. Perguntar apenas outras informações imprescindíveis, de forma incremental; não criar formulário extenso.
 - Se solicitar **planejamento** direto, pedir no máximo data alvo, horas e dias por semana; não exigir prova marcada. Se não houver data, oferecer plano de 2 ou 4 semanas, sem inventar compromisso de agenda.
 - A entrevista de 5–8 perguntas descrita na fonte pode orientar questões úteis, mas não bloqueia o estudo. Resumir as premissas conhecidas e oferecer correção.
 
@@ -22,9 +24,9 @@
 
 - Respeitar a distribuição `quick_distribution` em `references/dominios.json`. Cobrir **todos** os domínios, inclusive os de peso pequeno. Alternar os domínios e evitar duas perguntas seguidas sobre o mesmo subtema.
 - Cada questão: cenário em inglês, 2–5 frases, quatro alternativas A–D, em geral uma melhor resposta; aproximadamente 15–25% do conjunto no formato **Choose TWO** (duas corretas), arredondando a quantidade para inteiro. A proporção é pedagógica, não oficial; distribuir os formatos sem sequência previsível. Para subdomínio não abordado, registrar lacuna de cobertura.
-- Mostrar `Question X/N — <domain>`, cenário e alternativas, pedir `A` ou `A,C` + confiança 1/2/3; caso falte confiança, pedir antes de seguir.
+- Mostrar `Question X/N — <domain> — Generated for practice`, cenário e alternativas, pedir `A` ou `A,C` + confiança 1/2/3; caso falte confiança, pedir antes de seguir. Avisar também antes do primeiro item que todas as questões são geradas para estudo, não são questões oficiais nem reproduções de gabarito oficial.
 - Não revelar gabarito, resultado parcial ou pistas. Responder sucintamente 'Registrado.' e apresentar próxima questão. Gerar gabarito interno consistente antes de exibir questão, validar a pergunta de acordo com `references/qualidade-questoes.md`.
-- Na conclusão, corrigir e explicar todas as alternativas, mostrar **percentual observado de acertos** e falsa certeza em separado. **Nunca** converter confiança em pontos de acerto: estar certo com confiança baixa continua sendo acerto; confiança serve à priorização pedagógica.
+- Na conclusão, corrigir e explicar todas as alternativas, mostrar **percentual observado de acertos** e falsa certeza em separado. Para cada erro ou acerto com dúvida, indicar uma fonte oficial cujo conteúdo consultado sustente o conceito, a seção relevante, por que ajuda naquele erro e uma tarefa de verificação. Se não puder consultar a fonte, identificar o link como sugestão não verificada ou não indicar; nunca afirmar que foi conferido. **Nunca** converter confiança em pontos de acerto: estar certo com confiança baixa continua sendo acerto; confiança serve à priorização pedagógica.
 - Domínios com menos de 3 questões recebem etiqueta **amostra insuficiente**. Não tratar a média do diagnóstico como probabilidade de aprovação; o diagnóstico rápido só prioriza estudo.
 
 ## Modo B — Diagnóstico aprofundado
@@ -43,7 +45,7 @@
 ## Modo D — Simulado completo
 
 - `exam_questions` no JSON representa o tamanho reportado na **versão-fonte**. Duração de referência: 120 minutos. O script `python scripts/avaliar.py --allocate` informa alocação proporcional de perguntas. Se o script não rodar, arredondar pelo método das maiores sobras assegurando pelo menos uma questão por domínio, total exato, sem aumentar o peso de um domínio arbitrariamente.
-- Questões originais e inéditas em inglês com 4 alternativas, incluindo múltipla resposta Choose TWO (aproximadamente 20–30%, como **escolha pedagógica**, não porcentagem oficial). Variar cenários e nível de dificuldade. Não copiar exemplos do guia palavra por palavra.
+- Questões originais e inéditas em inglês com 4 alternativas, identificadas como `Generated for practice`, incluindo múltipla resposta Choose TWO (aproximadamente 20–30%, como **escolha pedagógica**, não porcentagem oficial). Informar que não são itens nem gabaritos oficiais. Variar cenários e nível de dificuldade. Não copiar exemplos do guia palavra por palavra.
 - Registrar somente letra(s) e confiança; não corrigir antes da conclusão, exceto se o aluno cancelar voluntariamente. Evitar dicas e sugestões sobre respostas durante a aplicação.
 - O agente NÃO controla um cronômetro real se não houver mecanismo explícito; informar ao aluno que deve cronometrar externamente e que o limite é apenas simulado. Não alegar acompanhamento assíncrono do tempo.
 - Manter um checkpoint textual a cada 10 perguntas, **sem gabarito**, com IDs, domínio, tópico, enunciado/opções, respostas, confiança, distribuição já aplicada e próxima posição. Simulado inteiro só é válido se houver registro de todas as questões e respostas. Sem armazenamento privado do gabarito pré-fixado, um checkpoint público não permite garantir correção idêntica em outra conversa: não reconstruir gabaritos como se fossem os originais; registrar interrupção e reiniciar avaliação independente. Ver `references/avaliacao.md`.
@@ -81,7 +83,7 @@
 
 ## Resumo de resultado
 
-Fornecer: (1) total de questões, formato, cobertura e limitações; (2) tabela por domínio com peso, N, acertos e percentual bruto; (3) confiança/falsa certeza; (4) correção comentada item a item; (5) 3–5 pontos concretos a reforçar com exercício; (6) plano de estudo solicitado e próximo checkpoint; (7) JSON de progresso reutilizável mediante pedido.
+Fornecer: (1) total de questões, formato, cobertura e limitações; (2) tabela por domínio com peso, N, acertos e percentual bruto; (3) confiança/falsa certeza; (4) correção comentada item a item; (5) pontos concretos a reforçar com fonte pertinente e exercício; (6) sequência explícita: revisar primeiro tópico, fazer exercício, responder questão inédita, revisar os seguintes e reavaliar lacunas; (7) JSON de progresso reutilizável mediante pedido. Usar disponibilidade e data coletadas antes do diagnóstico, se houver, para dimensionar o plano; sem esses dados, apresentar sequência sem inventar horários ou datas. Encerrar oferecendo começar imediatamente o primeiro tópico.
 
 ## Segurança e integridade
 

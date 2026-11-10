@@ -87,7 +87,7 @@ metadata:
 - **Revisar/progresso:** comparar desempenho com cobertura e versão do guia, fazer revisão de erros e exportar resumo portável.
 - **Planejar:** construir cronograma realista a partir de tempo disponível, objetivos e erros observados; nunca inventar compromissos de agenda.
 
-Se o usuário pedir um modo diretamente, **começar esse modo** sem oferecer menu. Para pedido genérico de ajuda para {code}, oferecer escolha breve entre diagnóstico rápido, estudar, praticar ou simulado; por padrão iniciar diagnóstico rápido se disser apenas 'começar'. Solicitar só informações imprescindíveis e não repetir dados já informados.
+Se o usuário pedir um modo diretamente, começar esse modo sem impor menu. Quando apenas escolher {code} ou pedir preparação genérica, apresentar domínios e recursos relevantes e perguntar se deseja um diagnóstico, aguardando resposta. Antes da primeira questão do diagnóstico, perguntar a disponibilidade semanal e eventual data-alvo, aceitando que não saiba ou não queira informar. Aproveitar dados já fornecidos e usá-los após a correção; não voltar a perguntar ao final.
 
 ## Regras específicas desta prova
 
@@ -95,6 +95,7 @@ Se o usuário pedir um modo diretamente, **começar esse modo** sem oferecer men
 
 - Idioma da explicação: português brasileiro; enunciado de questões e nomes de recursos/domínios em inglês.
 - Antes de fazer questão, assegurar que há resposta **defensável**, distratores plausíveis e **quatro** alternativas. Distribuir escolha simples e 'Choose TWO' segundo a metodologia, sem alternância previsível; as proporções são pedagógicas.
+- Identificar questões como geradas para prática; não sugerir que sejam itens oficiais. Na correção, associar cada lacuna a uma fonte adequada quando realmente consultada, explicar como a leitura ajuda e propor um próximo passo executável.
 - Durante diagnóstico e simulado: **não revelar acertos, erros, dicas ou gabarito**, nem mesmo por elogios. Solicitar resposta (letra(s)) e confiança 1–3, registrar e seguir.
 - Preservar itens anulados com motivo, excluí-los das contas e recompor cobertura quando necessário; seguir `references/avaliacao.md`.
 - Separar percentual bruto de acertos, calibração de confiança e cobertura. Não misturar pontos de confiança com porcentagem de acertos. Um domínio com uma questão não é considerado dominado.
@@ -173,6 +174,8 @@ def main():
         write(skill/'references'/'metodologia.md', METHOD)
         write(skill/'references'/'qualidade-questoes.md',QUALITY)
         write(skill/'references'/'avaliacao.md',ASSESSMENT)
+        if cfg['code'] == 'CCDV-F':
+            write(skill/'references'/'roteiro-estudo.md', (ROOT/'tools'/'roteiro-ccdv.md').read_text(encoding='utf-8'))
         write(skill/'references'/'fontes.md',baseline[cfg['code']]['sources'])
         exercises='\n\n'.join(f'### {topic}\n\n{body}' for topic,body in cfg['exercises'])
         write(skill/'references'/'laboratorios.md',f'# Exercícios sugeridos para {cfg["code"]}\n\n**Atenção:** são exercícios pedagógicos gerados para esta skill, não exigências adicionais confirmadas pelo guia oficial. Usar apenas o escopo e domínios de `escopo-base.md`.\n\n{exercises}\n\n## Como avaliar\n\nPara cada atividade: estabelecer critério de aceite simples, pedir primeiro a decisão do estudante, apontar trade-off omitido, propor correção e registrar tópico que precisa de revisão.\n')
@@ -187,6 +190,8 @@ def main():
         skill_md=SKILL_TEMPLATE.format(version=VERSION,name=cfg['name'],code=cfg['code'],title=cfg['title'],trigger=cfg['trigger'],
                              focus=FOCUS[cfg['code']],quick_n=sum(cfg['quick']),deep_n=sum(cfg['deep']),
                              quick_repr=quick_repr,deep_repr=deep_repr,q=cfg['q'])
+        if cfg['code'] == 'CCDV-F':
+            skill_md += '\nPara apresentar os domínios e selecionar leituras por lacuna, consultar `references/roteiro-estudo.md`.\n'
         write(skill/'SKILL.md',skill_md)
         create_zip(skill,ZIPS/(cfg['name']+'.zip'))
     # zip consolidado para arquivamento / manutenção, não upload direto de skill
