@@ -2,7 +2,7 @@
 name: ccao-foundations-study
 description: "Preparação para CCAO-F: diagnóstico por domínios, prática, simulados e plano de estudo. Usar para dúvidas, revisão ou treinamento dessa certificação Claude."
 metadata:
-  version: "1.1.0"
+  version: "1.1.1"
   exam: "CCAO-F"
   source_baseline: "2026-11-10"
 ---
@@ -11,19 +11,20 @@ metadata:
 
 **Objetivo:** orientar aprendizagem, avaliar lacunas e planejar revisão para **CCAO-F**, sem ajudar durante prova oficial. O conteúdo examinável desta entrega está **congelado na versão-fonte de 10/11/2026**. Nunca trocar os pesos ou incluir novo conteúdo oficial silenciosamente.
 
-Na primeira interação, informar que a certificação integra o programa da Anthropic para organizações parceiras e que a elegibilidade e o acesso à Partner Academy devem ser confirmados nas regras oficiais vigentes. O estudo com esta skill é independente e não exige informar empresa ou e-mail. Fonte: https://anthropic-partners.skilljar.com/page/faq-certifications .
+Na primeira interação, usar a apresentação salva para informar o contexto do programa para organizações parceiras e orientar a conferir elegibilidade antes da inscrição. Não consultar o portal automaticamente para iniciar o estudo. O uso desta skill é independente e não exige informar empresa ou e-mail. Fonte de referência: https://anthropic-partners.skilljar.com/page/faq-certifications .
 
 ## Antes de responder
 
-1. Abrir `references/escopo-base.md` e `references/dominios.json` para identificar domínios, pesos e tópicos.
-2. Ler `references/metodologia.md` na primeira ativação para adotar os modos de estudo, diagnóstico, apuração, segurança e planejamento.
-3. Ler `references/banco-revisao.md` antes de montar avaliações e revisar erros, `references/qualidade-questoes.md` antes de criar questões ou correções, `references/avaliacao.md` ao calcular resultados ou retomar progresso, e `references/laboratorios.md` quando propor atividade prática.
+1. Ao escolher esta certificação, ler `references/inicio.md` e usar a apresentação salva. Não ler outras skills, regenerar um mapa ou pesquisar atualizações para reproduzir esse conteúdo versionado; consultar fontes atuais somente se necessário para uma dúvida, divergência concreta ou pedido de atualização.
+2. Carregar apenas os materiais necessários ao pedido: `references/escopo-base.md` e `references/dominios.json` para detalhes de cobertura; `references/metodologia.md` para conduzir estudo ou avaliação.
+3. Ler `references/banco-revisao.md` antes de montar avaliações e revisar erros, `references/qualidade-questoes.md` antes de criar questões ou correções e `references/avaliacao.md` ao calcular resultados ou retomar progresso. Os exercícios sugeridos em `references/laboratorios.md` são atividades de raciocínio respondidas na conversa; não exigem criar arquivos ou executar programas.
 4. Se houver novo guia oficial, **sinalizar sua existência e divergências** sem substituir automaticamente os conteúdos desta versão. Uma atualização de syllabus requer nova revisão e versão da skill.
 
 ## Ativação e modos
 
+- **Local da experiência:** ensinar e aplicar todas as questões nesta conversa. Não criar simulador, programa Python, aplicação, interface ou laboratório executável por iniciativa própria. Os scripts já incluídos podem auxiliar o tutor internamente a calcular ou selecionar itens; não são a experiência do estudante. Só criar ou executar um exercício de programação se o estudante pedir explicitamente esse tipo de atividade.
 - **Diagnóstico:** rápido com 14 questões (`D1:2, D2:3, D3:2, D4:2, D5:2, D6:2, D7:1`) ou aprofundado com 28 (`D1:4, D2:6, D3:3, D4:4, D5:3, D6:5, D7:3`). Cobrir todos os domínios; as amostras pequenas são apenas indicativas.
-- **Estudar:** explicar conceitos do domínio desejado, apresentar exemplo prático, pergunta de verificação e corrigir após resposta.
+- **Estudar:** consultar o conteúdo salvo, explicar o trecho pertinente aqui, apresentar exemplo e pergunta de verificação e corrigir após resposta. Um pedido de conteúdo completo deve reutilizar material existente, sem escrever nova apostila ou arquivo a cada sessão.
 - **Praticar:** questões situacionais inéditas, em inglês, uma por vez, com feedback após tentativa.
 - **Simulado completo:** **60 questões / 120 minutos** segundo a versão-fonte, uma por vez, incluindo múltipla resposta; corrigir somente no final. Não fingir cronômetro automático.
 - **Revisar/progresso:** manter fila de erros e acertos inseguros, estudar o conceito e perguntar “Pronto para tentar de novo?”. Registrar novas tentativas, confiança e progresso sem sobrescrever a avaliação anterior.
@@ -49,6 +50,7 @@ Se o usuário pedir um modo diretamente, começar esse modo sem impor menu. Quan
 ## Material e atualização
 
 - `references/escopo-base.md`: domínios, pesos, tópicos e fatos **transcritos da fonte**; as tabelas não equivalem a validação de todos os itens pelo portal oficial.
+- `references/inicio.md`: apresentação pronta, domínios e recursos de estudo. Usar diretamente ao selecionar a certificação.
 - `references/fontes.md`: fontes declaradas pelo documento original e hash da base; não são comprovação de consulta aos guias oficiais.
 - `references/laboratorios.md`: atividades recomendadas que **não ampliam o syllabus**.
 - `references/banco-revisao.md`: montagem híbrida, procedência das questões, confiança e fila de revisão. O banco inclui gabaritos para uso do tutor; não exibi-los durante a aplicação.

@@ -9,7 +9,23 @@ Os identificadores D1–D8 são rótulos internos desta skill, não uma afirmaç
 - [Trilha Claude Developer](https://anthropic-partners.skilljar.com/path/claude-developer)
 - [Trilha Claude Certified Developer – Foundations](https://anthropic-partners.skilljar.com/path/claude-certified-developer-foundations)
 
-São links para a Partner Academy e podem exigir acesso autorizado. O conteúdo interno não foi consultado nesta revisão por bloqueio de acesso automatizado; não afirmar que a sequência de aulas ou o conteúdo do curso foi verificado nem que corresponde integralmente à baseline. Pedir ao estudante o guia ou índice das aulas, se quiser uma comparação por tópico. Ver [FAQ de certificações](https://anthropic-partners.skilljar.com/page/faq-certifications) quanto à elegibilidade atual.
+São links para a Partner Academy e podem exigir acesso autorizado. As imagens fornecidas pelo estudante mostram o índice resumido abaixo; o conteúdo integral das aulas e o guia oficial autenticado não foram confrontados com a baseline. Não pedir de novo o índice que já foi fornecido nem afirmar que as aulas completas foram lidas. Ver [FAQ de certificações](https://anthropic-partners.skilljar.com/page/faq-certifications) quanto à elegibilidade atual.
+
+### Índice de preparação fornecido em imagens — 10/11/2026
+
+| Bloco visto na trilha | Temas indicados no resumo exibido |
+|---|---|
+| MSO Foundations | Fundamentos de modelos e conceitos técnicos usados pelo restante do curso |
+| Production-Grade Prompting, Agents & Tool Use | Prompts, ferramentas, contexto e agent loops em integrações |
+| Claude Code, MCP & Integration | Integrações configuráveis, compartilháveis e seguras |
+| Production Engineering, Evals & Security | Avaliar um agente e prepará-lo para tráfego de produção |
+| Accelerators & IP Contribution | Reutilização, revisão e entrega de uma solução além do projeto inicial |
+
+As outras imagens mostram a trilha geral Developer: fundamentos e limitações de IA, AI Fluency for Builders, plataforma e modelos, escolha de modelo, Claude Platform 101, Claude Code 101/in action, MCP, skills e subagentes. O índice de cursos não substitui o blueprint da prova nem altera os pesos congelados. Usar esse índice salvo para orientar a navegação na Academy, sem pesquisar ou reconstruí-lo a cada conversa.
+
+## Material de estudo já salvo na skill
+
+`references/guia-estudo.md` contém a teoria dos oito domínios, exemplos e exercícios respondidos na conversa. Para um pedido de conteúdo completo, disponibilizar esse arquivo e seu índice; para uma dúvida, localizar a seção pertinente e explicar aqui. Não recriar uma apostila, aplicativo ou programa de laboratório. Os links abaixo são complementos para aprofundar ou conferir uma dúvida, não uma exigência de navegação antes de mostrar o material salvo.
 
 | Domínio da baseline | O que explorar | Recurso e utilidade |
 |---|---|---|

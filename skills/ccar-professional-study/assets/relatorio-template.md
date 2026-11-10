@@ -1,6 +1,6 @@
 # Relatório portável de estudo — CCAR-P
 
-- Versão da skill: v1.1.0; escopo-fonte: 10/11/2026
+- Versão da skill: v1.1.1; escopo-fonte: 10/11/2026
 - Data da sessão: [preencher]
 - Objetivo e data da prova, se houver: [preencher]
 - Modalidade: [diagnóstico rápido / aprofundado / simulado / prática]

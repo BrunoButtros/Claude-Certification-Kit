@@ -1,6 +1,6 @@
 # Exercícios sugeridos para CCAR-P
 
-**Atenção:** são exercícios pedagógicos gerados para esta skill, não exigências adicionais confirmadas pelo guia oficial. Usar apenas o escopo e domínios de `escopo-base.md`.
+**Atenção:** são exercícios pedagógicos gerados para esta skill, não exigências adicionais confirmadas pelo guia oficial. Usar apenas o escopo e domínios de `escopo-base.md`. Resolver na conversa, com explicação, texto ou pseudocódigo; só criar arquivos ou executar código se o estudante pedir explicitamente uma atividade de programação.
 
 ### Decisão de arquitetura
 
