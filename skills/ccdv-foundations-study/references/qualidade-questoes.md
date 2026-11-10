@@ -13,7 +13,11 @@
 8. Para cada questão, preparar uma referência ao tópico do guia e, se disponível, link oficial realmente consultado. Sem fonte verificada, usar referência de domínio/subtema e **não inventar link direto**.
    Ao recomendar leitura após um erro, conferir o conteúdo da página e identificar a seção e o conceito que resolve aquele erro. O link deve ser útil para a lacuna específica; não afirmar que uma página genérica cobre um detalhe que não foi localizado. Na ausência de acesso, informar que a pertinência não foi verificada e oferecer explicação própria e exercício.
 9. Usar inglês natural e tecnicamente claro. Explicações ao aluno, depois da entrega, em português.
-10. Novas avaliações nunca reutilizam deliberadamente o mesmo enunciado com letras permutadas. Alterar cenário, evidência e decisão testada.
+10. Reutilizar questões de forma transparente para revisão, preservando IDs/versão e registrando exposição. Permutar letras não torna a questão inédita. Para verificar aplicação além da memória do item, propor depois um novo cenário e explicitar essa diferença.
+
+## Entrada no banco
+
+Questões do banco precisam de domínio/subtema, enunciado/opções, gabarito, justificativa de cada alternativa, referência consultada, data e estado de revisão. Usar `documentary_ai_review_no_independent_expert` para revisão documental assistida por IA; `expert_reviewed` somente após revisão independente de especialista efetivamente realizada. Itens sem revisão ou ambíguos ficam como rascunho ou inválidos, fora da seleção. Não afirmar equivalência com questões oficiais ou validação psicométrica. Seguir `references/banco-revisao.md` ao combinar o banco e questões novas.
 
 ## Níveis
 - Inicial/intermediário: reconhecer critério-chave e evitar falha comum.

@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "exam_code": "CCDV-F",
+  "baseline": "2026-11-10",
+  "review_scope": "Revisão documental assistida por IA; sem revisão independente de especialista e sem validação psicométrica. Não são itens oficiais.",
+  "domains": {
+    "D3": [
+      {
+        "id": "CCDV-B003",
+        "domain_id": "D3",
+        "topic": "prompt chaining",
+        "question": "An application processes compliance reports through three fixed stages: extract facts, validate them against business rules, and generate a summary from the validated facts. Each stage depends on the previous stage’s output. The team needs an audit trail and must stop processing when validation fails.\n\nWhich design best fits these requirements?",
+        "options": {
+          "A": "Use prompt chaining with application-controlled transitions, logging each stage and checking validation before generating the summary.",
+          "B": "Use an orchestrator-workers pattern, allowing the orchestrator to choose the subtasks and their execution order for each report.",
+          "C": "Use an autonomous agent that chooses which stage to run next and decides when the report is ready.",
+          "D": "Run extraction, validation, and summarization in parallel, then use a final model call to reconcile their outputs."
+        },
+        "correct": [
+          "A"
+        ],
+        "explanations": {
+          "A": "As etapas e dependências já são conhecidas; transições em código tornam explícitos o registro e o bloqueio após falha.",
+          "B": "Decomposição dinâmica é útil quando as subtarefas não são previsíveis; aqui acrescenta decisões desnecessárias a uma sequência fixa.",
+          "C": "A escolha autônoma da próxima etapa reduz o controle desejado sobre uma ordem já definida.",
+          "D": "As etapas dependem dos resultados anteriores, portanto executá-las simultaneamente não preserva a dependência descrita."
+        },
+        "source_url": "https://www.anthropic.com/engineering/building-effective-agents",
+        "source_checked": "2026-11-10",
+        "origin": "generated_for_practice",
+        "review_status": "documentary_ai_review_no_independent_expert",
+        "version": "1.0"
+      },
+      {
+        "id": "CCDV-B011",
+        "domain_id": "D3",
+        "topic": "agentic loop e tool_result",
+        "question": "A client-side agent asks Claude to compare an invoice balance with a customer’s credit limit. The Messages API returns stop_reason: \"tool_use\" and a tool_use block requesting lookup_account. The application has not yet executed the tool.\n\nWhat should the application do next?",
+        "options": {
+          "A": "Execute the tool and append its output as an assistant message before requesting the final answer.",
+          "B": "Resend the original request with a higher max_tokens value so Claude can finish the lookup.",
+          "C": "Execute the tool, preserve the assistant’s tool-use message, and return a matching tool_result in a user message.",
+          "D": "Execute the tool and replace the assistant’s tool_use block with the tool output before continuing."
+        },
+        "correct": [
+          "C"
+        ],
+        "explanations": {
+          "A": "O resultado da client tool deve voltar em um bloco tool_result de mensagem user, ligado ao identificador da chamada.",
+          "B": "O modelo solicitou execução externa; aumentar o orçamento não executa a função da aplicação.",
+          "C": "Preserva o pedido do assistente e responde com tool_result e tool_use_id correspondente, permitindo a continuação.",
+          "D": "Substituir o bloco apaga o registro da chamada e quebra a estrutura de correlação esperada."
+        },
+        "source_url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/how-tool-use-works",
+        "source_checked": "2026-11-10",
+        "origin": "generated_for_practice",
+        "review_status": "documentary_ai_review_no_independent_expert",
+        "version": "1.0"
+      }
+    ],
+    "D2": [
+      {
+        "id": "CCDV-B008",
+        "domain_id": "D2",
+        "topic": "batches, streaming e caching",
+        "question": "A company runs two workloads: an interactive assistant that repeatedly uses the same long policy document, and thousands of independent reports that can be processed asynchronously without a strict overnight deadline. The team wants to reduce API costs while preserving answer quality and keeping the assistant responsive.\n\nWhich TWO changes best fit these workloads? Choose TWO.",
+        "options": {
+          "A": "Send interactive assistant requests through the Message Batches API to reduce response latency.",
+          "B": "Process the independent overnight reports through the Message Batches API.",
+          "C": "Enable streaming for both workloads to reduce the number of billable input tokens.",
+          "D": "Cache the stable policy prefix in assistant requests, placing each variable user question after it."
+        },
+        "correct": [
+          "B",
+          "D"
+        ],
+        "explanations": {
+          "A": "Batches são assíncronos; não são o mecanismo apropriado para reduzir latência de respostas interativas.",
+          "B": "Os relatórios independentes toleram espera e se encaixam no processamento assíncrono em lote.",
+          "C": "Streaming entrega a resposta incrementalmente; por si só, não reduz os tokens de entrada faturáveis.",
+          "D": "Um prefixo estável reutilizado pode aproveitar prompt caching; o conteúdo variável deve ficar depois dele."
+        },
+        "source_url": "https://platform.claude.com/docs/en/build-with-claude/batch-processing",
+        "source_checked": "2026-11-10",
+        "origin": "generated_for_practice",
+        "review_status": "documentary_ai_review_no_independent_expert",
+        "version": "1.0",
+        "additional_sources": [
+          "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+          "https://platform.claude.com/docs/en/build-with-claude/streaming"
+        ]
+      }
+    ],
+    "D1": [
+      {
+        "id": "CCDV-B010",
+        "domain_id": "D1",
+        "topic": "prefixo de prompt caching",
+        "question": "An application sends a long, identical policy document in every request and marks its final block with cache_control. However, each request places a unique timestamp before the policy document. Cache reads remain near zero, even though requests exceed the minimum cacheable length and arrive within the cache lifetime.\n\nWhich change most directly addresses the cache misses?",
+        "options": {
+          "A": "Extend the cache lifetime while preserving the current order of the request content.",
+          "B": "Place the unchanged policy first and move the timestamp after the cached prefix.",
+          "C": "Move cache_control to the end of the user question, after all request-specific content.",
+          "D": "Lower the temperature while preserving the timestamp’s position before the policy."
+        },
+        "correct": [
+          "B"
+        ],
+        "explanations": {
+          "A": "As chamadas já chegam dentro da validade; o prefixo variável continua impedindo a correspondência.",
+          "B": "O prefixo até o breakpoint deve permanecer idêntico. Colocar o timestamp depois dele remove a variação identificada.",
+          "C": "Incluir a pergunta variável no prefixo mantém a divergência entre requisições.",
+          "D": "Temperatura afeta a geração; não torna idêntico um prefixo que contém timestamps diferentes."
+        },
+        "source_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+        "source_checked": "2026-11-10",
+        "origin": "generated_for_practice",
+        "review_status": "documentary_ai_review_no_independent_expert",
+        "version": "1.0"
+      }
+    ],
+    "D5": [
+      {
+        "id": "CCDV-B013",
+        "domain_id": "D5",
+        "topic": "primitivas MCP",
+        "question": "A team is designing an MCP server. The host application should be able to load a policy document as context, and users should be able to select a reusable “review this proposal” message template. The server will also support creating support tickets.\n\nWhich TWO mappings best follow MCP’s standard primitives and control model? Choose TWO.",
+        "options": {
+          "A": "Expose the policy document as a resource that the host application can read and attach as context.",
+          "B": "Expose ticket creation as a resource whose read handler creates a new ticket whenever the host loads it.",
+          "C": "Expose the review template as a tool and rely on the model to decide when to invoke it instead of user selection.",
+          "D": "Expose the reusable review template as a prompt that users can select and populate with arguments."
+        },
+        "correct": [
+          "A",
+          "D"
+        ],
+        "explanations": {
+          "A": "Resources disponibilizam dados que a aplicação lê e inclui no contexto.",
+          "B": "Ler um resource não deve criar um ticket; uma operação com esse efeito se enquadra em tool.",
+          "C": "Uma tool pode produzir texto, mas aqui se deseja seleção explícita pelo usuário; prompts correspondem ao modelo de controle pedido.",
+          "D": "Prompts são templates reutilizáveis selecionados pelo usuário, podendo receber argumentos."
+        },
+        "source_url": "https://modelcontextprotocol.io/docs/learn/server-concepts",
+        "source_checked": "2026-11-10",
+        "origin": "generated_for_practice",
+        "review_status": "documentary_ai_review_no_independent_expert",
+        "version": "1.0"
+      }
+    ]
+  }
+}

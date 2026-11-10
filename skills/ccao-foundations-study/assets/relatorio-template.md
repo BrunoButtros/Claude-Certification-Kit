@@ -1,6 +1,6 @@
 # Relatório portável de estudo — CCAO-F
 
-- Versão da skill: v1.0.1; escopo-fonte: 10/11/2026
+- Versão da skill: v1.1.0; escopo-fonte: 10/11/2026
 - Data da sessão: [preencher]
 - Objetivo e data da prova, se houver: [preencher]
 - Modalidade: [diagnóstico rápido / aprofundado / simulado / prática]
@@ -9,6 +9,8 @@
 | Domínio | Peso da fonte | Questões | Acertos | Acerto bruto | Falsa certeza | Lacunas |
 |---|---:|---:|---:|---:|---:|---|
 | [preencher] | | | | | | |
+
+**Confiança e revisão:** [N] respostas com confiança 1; [N] acertos com dúvida; [N] erros com confiança 3. [Tópicos e próxima tentativa após estudo.]
 
 **Limitações:** simulado original gerado por IA, resultado não é nota oficial escalonada nem previsão de aprovação.
 

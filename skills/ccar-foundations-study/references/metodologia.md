@@ -1,4 +1,4 @@
-# Metodologia compartilhada — versão 1.0.1 (base 10/11/2026)
+# Metodologia compartilhada — versão 1.1.0 (base 10/11/2026)
 
 ## Regras de ouro
 
@@ -23,9 +23,10 @@
 
 ## Modo A — Diagnóstico rápido
 
+- Montar a avaliação combinando itens do banco por domínio e questões geradas para as vagas restantes, conforme `references/banco-revisao.md`. Respeitar as cotas e os formatos previstos. O banco piloto ainda não cobre todos os domínios; não supor um banco completo.
 - Respeitar a distribuição `quick_distribution` em `references/dominios.json`. Cobrir **todos** os domínios, inclusive os de peso pequeno. Alternar os domínios e evitar duas perguntas seguidas sobre o mesmo subtema.
 - Cada questão: cenário em inglês, 2–5 frases, quatro alternativas A–D, em geral uma melhor resposta; aproximadamente 15–25% do conjunto no formato **Choose TWO** (duas corretas), arredondando a quantidade para inteiro. A proporção é pedagógica, não oficial; distribuir os formatos sem sequência previsível. Para subdomínio não abordado, registrar lacuna de cobertura.
-- Mostrar `Question X/N — <domain> — Generated for practice`, cenário e alternativas, pedir `A` ou `A,C` + confiança 1/2/3; caso falte confiança, pedir antes de seguir. Avisar também antes do primeiro item que todas as questões são geradas para estudo, não são questões oficiais nem reproduções de gabarito oficial.
+- Mostrar `Question X/N — <domain>` com a origem: item do banco e seu estado real de revisão, ou gerada nesta sessão; sinalizar repetição quando houver. Pedir `A` ou `A,C` + confiança 1/2/3; caso falte confiança, pedir antes de seguir. Avisar também antes do primeiro item que as questões são próprias de estudo, não são itens nem gabaritos oficiais.
 - Não revelar gabarito, resultado parcial ou pistas. Responder sucintamente 'Registrado.' e apresentar próxima questão. Gerar gabarito interno consistente antes de exibir questão, validar a pergunta de acordo com `references/qualidade-questoes.md`.
 - Na conclusão, corrigir e explicar todas as alternativas, mostrar **percentual observado de acertos** e falsa certeza em separado. Para cada erro ou acerto com dúvida, indicar uma fonte oficial cujo conteúdo consultado sustente o conceito, a seção relevante, por que ajuda naquele erro e uma tarefa de verificação. Se não puder consultar a fonte, identificar o link como sugestão não verificada ou não indicar; nunca afirmar que foi conferido. **Nunca** converter confiança em pontos de acerto: estar certo com confiança baixa continua sendo acerto; confiança serve à priorização pedagógica.
 - Domínios com menos de 3 questões recebem etiqueta **amostra insuficiente**. Não tratar a média do diagnóstico como probabilidade de aprovação; o diagnóstico rápido só prioriza estudo.
@@ -39,14 +40,14 @@
 ## Modo C — Estudar / praticar
 
 - Dar primeiro uma explicação conceitual curta, exemplo aplicado e um mini exercício. Para desenvolver raciocínio, perguntar antes de revelar gabarito.
-- Quando errar: dizer o que faltou no critério de decisão, apresentar contraexemplo e oferecer nova questão inédita. Evitar somente decorar regras ou fornecer a resposta imediatamente.
+- Quando errar: registrar questão, alternativa marcada e confiança na fila de revisão; explicar o critério de decisão e apresentar contraexemplo. Após o estudo perguntar “Pronto para tentar de novo?”; repetir o item se aceitar e depois oferecer novo cenário do mesmo conceito. Seguir `references/banco-revisao.md`.
 - Se houver código, usar exemplos fictícios, sem exigir autenticação; qualquer exemplo executável deve declarar seus pré-requisitos e limites. Não solicitar nem registrar segredos.
 - Alternar questões situacionais, diagnóstico de falhas, comparação de trade-offs, microexercícios e revisão espaçada por assunto.
 
 ## Modo D — Simulado completo
 
 - `exam_questions` no JSON representa o tamanho reportado na **versão-fonte**. Duração de referência: 120 minutos. O script `python scripts/avaliar.py --allocate` informa alocação proporcional de perguntas. Se o script não rodar, arredondar pelo método das maiores sobras assegurando pelo menos uma questão por domínio, total exato, sem aumentar o peso de um domínio arbitrariamente.
-- Questões originais e inéditas em inglês com 4 alternativas, identificadas como `Generated for practice`, incluindo múltipla resposta Choose TWO (aproximadamente 20–30%, como **escolha pedagógica**, não porcentagem oficial). Informar que não são itens nem gabaritos oficiais. Variar cenários e nível de dificuldade. Não copiar exemplos do guia palavra por palavra.
+- Combinar banco e geração segundo `references/banco-revisao.md`: questões próprias em inglês com 4 alternativas, identificando a origem e o estado de revisão, incluindo Choose TWO (aproximadamente 20–30%, escolha pedagógica, não porcentagem oficial). Repetições entre sessões são permitidas e sinalizadas; não duplicar um item dentro da mesma avaliação. Informar que não são itens nem gabaritos oficiais. Não copiar exemplos do guia palavra por palavra.
 - Registrar somente letra(s) e confiança; não corrigir antes da conclusão, exceto se o aluno cancelar voluntariamente. Evitar dicas e sugestões sobre respostas durante a aplicação.
 - O agente NÃO controla um cronômetro real se não houver mecanismo explícito; informar ao aluno que deve cronometrar externamente e que o limite é apenas simulado. Não alegar acompanhamento assíncrono do tempo.
 - Manter um checkpoint textual a cada 10 perguntas, **sem gabarito**, com IDs, domínio, tópico, enunciado/opções, respostas, confiança, distribuição já aplicada e próxima posição. Simulado inteiro só é válido se houver registro de todas as questões e respostas. Sem armazenamento privado do gabarito pré-fixado, um checkpoint público não permite garantir correção idêntica em outra conversa: não reconstruir gabaritos como se fossem os originais; registrar interrupção e reiniciar avaliação independente. Ver `references/avaliacao.md`.
@@ -55,8 +56,9 @@
 ## Modo E — Revisar e acompanhar
 
 - Se houver relatório anterior, conferir certificação, versão do schema, versão da skill e base-fonte antes de usar seus dados; não mesclar certificações ou bases diferentes silenciosamente. A versão 1.0 continua legível, mas não permite inventar histórico de itens ausente. Comparar por **mesma versão de guia**, modo, tamanho de amostra e cobertura de tópicos. Se forem diferentes, informar que o progresso não é diretamente comparável.
-- Nova avaliação deve usar questões novas e cenários diferentes. Fazer revisão espaçada em 1, 3 e 7 dias conforme agenda solicitada, sem prometer notificações ou ações em segundo plano.
+- Revisão pode repetir questões para retenção; registrar exposição e novas tentativas sem apagar resultados anteriores. Para verificar transferência, oferecer também outro cenário. Fazer revisão espaçada em 1, 3 e 7 dias conforme agenda solicitada, sem prometer notificações ou ações em segundo plano.
 - Marcar falsos positivos de confiança (errou, marcou 3), tópicos errados repetidamente e acertos com baixa confiança como oportunidades prioritárias de revisão.
+- Aplicar explicitamente a orientação de confiança de `references/banco-revisao.md`: vários itens com 1 exigem estudo dirigido, inclusive quando corretos; erros com 3 exigem revisão prioritária da falsa certeza. Mostrar as contagens e os tópicos e propor estudo seguido de nova tentativa.
 - Gerar resumo transportável no formato `assets/progresso-template.json`; conteúdo preenchido somente com dados do estudante nesta conversa ou por ele fornecidos.
 
 ## Apuração quantitativa

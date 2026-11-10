@@ -117,6 +117,8 @@ def evaluate(manifest, responses):
     grouped = {d["id"]: [] for d in domains}
     seen_ids = set()
     excluded = []
+    review_candidates = []
+    confidence_totals = {c: {"questions": 0, "correct": 0} for c in (1, 2, 3)}
     for pos, r in enumerate(responses, 1):
         if not isinstance(r, dict):
             raise InvalidInput(f"Registro {pos} não é objeto.")
@@ -141,6 +143,9 @@ def evaluate(manifest, responses):
         confidence = r.get("confidence")
         if type(confidence) is not int or confidence not in (1, 2, 3):
             raise InvalidInput(f"Confiança inválida na questão {pos}; use 1, 2 ou 3.")
+        previously_seen = r.get("previously_seen", False)
+        if type(previously_seen) is not bool:
+            raise InvalidInput("previously_seen deve ser booleano.")
         correct = normalize_choice(r.get("correct"))
         answer = normalize_choice(r.get("answer"))
         if len(correct) > 2 or len(answer) > 2:
@@ -151,6 +156,36 @@ def evaluate(manifest, responses):
             topic = "não informado"
         if not isinstance(topic, str):
             raise InvalidInput(f"Tópico inválido na questão {pos}; use texto.")
+        question = r.get("question")
+        if question is not None and (not isinstance(question, str) or not question.strip()):
+            raise InvalidInput("question deve ser texto não vazio quando informado.")
+        options = r.get("options")
+        if options is not None and (not isinstance(options, dict) or set(options) != set("ABCD")
+                                    or any(not isinstance(v, str) or not v.strip() for v in options.values())):
+            raise InvalidInput("options deve conter textos para A–D quando informado.")
+        confidence_totals[confidence]["questions"] += 1
+        confidence_totals[confidence]["correct"] += int(match)
+        if not match or confidence == 1:
+            reason = "error_high_confidence" if not match and confidence == 3 else (
+                "correct_low_confidence" if match else "error")
+            review_candidates.append({
+                "item_id": item_id, "domain_id": code, "topic": topic,
+                "reason": reason, "confidence": confidence,
+                "previously_seen": previously_seen,
+                "answer": sorted(answer), "correct": sorted(correct),
+                "incorrect_selected": sorted(answer - correct),
+                "missed_correct": sorted(correct - answer),
+                "priority": "high" if reason == "error_high_confidence" else "normal",
+                "status": "needs_study",
+                "next_action": ("Rever o critério de decisão e explicar por que a alternativa escolhida falha; praticar um contraexemplo."
+                                if reason == "error_high_confidence" else
+                                "Revisar o conceito e justificar a escolha e os distratores antes de tentar novamente."),
+            })
+            if question is not None:
+                review_candidates[-1]["question"] = question
+            if options is not None:
+                review_candidates[-1]["options"] = dict(options)
+                review_candidates[-1]["incorrect_selected_options"] = {c: options[c] for c in sorted(answer - correct)}
         grouped[code].append({
             "id": item_id,
             "acerto": match,
@@ -158,6 +193,7 @@ def evaluate(manifest, responses):
             "falsa_certeza": (not match and confidence == 3),
             "acerto_com_duvida": (match and confidence == 1),
             "topico": topic,
+            "previously_seen": previously_seen,
         })
     results = []
     weighted_sum = 0.0
@@ -180,11 +216,30 @@ def evaluate(manifest, responses):
             "questions": n, "correct": sum(x["acerto"] for x in q),
             "accuracy_percent": accuracy, "false_certainty_count": false_c,
             "correct_with_low_confidence_count": low_c, "priority_index": priority,
+            "low_confidence_count": sum(x["confianca"] == 1 for x in q),
+            "review_topics": sorted({x["topico"] for x in q if not x["acerto"] or x["confianca"] == 1}),
             "uncertainty": uncertainty,
             "error_topics": sorted({x["topico"] for x in q if not x["acerto"]}),
             "observed_topics": sorted({x["topico"] for x in q if x["topico"] != "não informado"}),
         })
     all_covered = all(x["questions"] > 0 for x in results)
+    exposure = []
+    for repeated in (False, True):
+        items = [x for group in grouped.values() for x in group if x["previously_seen"] == repeated]
+        hits = sum(x["acerto"] for x in items)
+        exposure.append({"previously_seen": repeated, "questions": len(items), "correct": hits,
+                         "accuracy_percent": round(100 * hits / len(items), 2) if items else None})
+    guidance = []
+    low_n = confidence_totals[1]["questions"]
+    if low_n:
+        guidance.append({"pattern": "low_confidence", "questions": low_n,
+                         "message": f"Você marcou confiança 1 em {low_n} questão(ões). Mesmo os acertos merecem estudo e uma nova tentativa com justificativa.",
+                         "topics": sorted({x["topic"] for x in review_candidates if x["confidence"] == 1})})
+    high_errors = [x for x in review_candidates if x["reason"] == "error_high_confidence"]
+    if high_errors:
+        guidance.append({"pattern": "error_high_confidence", "questions": len(high_errors),
+                         "message": f"Houve {len(high_errors)} erro(s) com confiança 3. Priorize rever o critério usado e testar um contraexemplo antes de avançar.",
+                         "topics": sorted({x["topic"] for x in high_errors})})
     return {
         "exam_code": manifest["exam_code"],
         "skill_version": manifest.get("version"),
@@ -193,6 +248,14 @@ def evaluate(manifest, responses):
         "questions_submitted": len(responses),
         "questions_invalidated": len(excluded),
         "invalidated_items": excluded,
+        "confidence_summary": [
+            {"confidence": c, **stats,
+             "accuracy_percent": round(100 * stats["correct"] / stats["questions"], 2) if stats["questions"] else None}
+            for c, stats in confidence_totals.items()
+        ],
+        "review_queue_candidates": review_candidates,
+        "exposure_summary": exposure,
+        "confidence_guidance": guidance,
         "raw_accuracy_percent": round(100 * sum(x["correct"] for x in results) / (len(responses) - len(excluded)), 2) if len(responses) > len(excluded) else None,
         "question_distribution_full_sim": allocate(domains, manifest["exam_questions"]),
         "domain_results": results,

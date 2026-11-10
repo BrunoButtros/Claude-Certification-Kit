@@ -7,12 +7,13 @@ import re
 import shutil
 import zipfile
 from pathlib import Path
+from montar_avaliacao import validate_bank
 
 ROOT = Path(__file__).resolve().parents[1]
 BASELINE = ROOT / 'tools' / 'baseline.json'
 OUT = ROOT / 'skills'
 ZIPS = ROOT / 'packages'
-VERSION = '1.0.1'
+VERSION = '1.1.0'
 
 CONFIG = [
     dict(code='CCAO-F', name='ccao-foundations-study', title='Claude Certified Associate – Foundations', q=60,
@@ -77,7 +78,7 @@ Na primeira interação, informar que a certificação integra o programa da Ant
 
 1. Abrir `references/escopo-base.md` e `references/dominios.json` para identificar domínios, pesos e tópicos.
 2. Ler `references/metodologia.md` na primeira ativação para adotar os modos de estudo, diagnóstico, apuração, segurança e planejamento.
-3. Ler `references/qualidade-questoes.md` antes de criar questões ou correções, `references/avaliacao.md` ao calcular resultados ou retomar progresso, e `references/laboratorios.md` quando propor atividade prática.
+3. Ler `references/banco-revisao.md` antes de montar avaliações e revisar erros, `references/qualidade-questoes.md` antes de criar questões ou correções, `references/avaliacao.md` ao calcular resultados ou retomar progresso, e `references/laboratorios.md` quando propor atividade prática.
 4. Se houver novo guia oficial, **sinalizar sua existência e divergências** sem substituir automaticamente os conteúdos desta versão. Uma atualização de syllabus requer nova revisão e versão da skill.
 
 ## Ativação e modos
@@ -86,7 +87,7 @@ Na primeira interação, informar que a certificação integra o programa da Ant
 - **Estudar:** explicar conceitos do domínio desejado, apresentar exemplo prático, pergunta de verificação e corrigir após resposta.
 - **Praticar:** questões situacionais inéditas, em inglês, uma por vez, com feedback após tentativa.
 - **Simulado completo:** **{q} questões / 120 minutos** segundo a versão-fonte, uma por vez, incluindo múltipla resposta; corrigir somente no final. Não fingir cronômetro automático.
-- **Revisar/progresso:** comparar desempenho com cobertura e versão do guia, fazer revisão de erros e exportar resumo portável.
+- **Revisar/progresso:** manter fila de erros e acertos inseguros, estudar o conceito e perguntar “Pronto para tentar de novo?”. Registrar novas tentativas, confiança e progresso sem sobrescrever a avaliação anterior.
 - **Planejar:** construir cronograma realista a partir de tempo disponível, objetivos e erros observados; nunca inventar compromissos de agenda.
 
 Se o usuário pedir um modo diretamente, começar esse modo sem impor menu. Quando apenas escolher {code} ou pedir preparação genérica, apresentar domínios e recursos relevantes e perguntar se deseja um diagnóstico, aguardando resposta. Antes da primeira questão do diagnóstico, perguntar a disponibilidade semanal e eventual data-alvo, aceitando que não saiba ou não queira informar. Aproveitar dados já fornecidos e usá-los após a correção; não voltar a perguntar ao final.
@@ -97,10 +98,11 @@ Se o usuário pedir um modo diretamente, começar esse modo sem impor menu. Quan
 
 - Idioma da explicação: português brasileiro; enunciado de questões e nomes de recursos/domínios em inglês.
 - Antes de fazer questão, assegurar que há resposta **defensável**, distratores plausíveis e **quatro** alternativas. Distribuir escolha simples e 'Choose TWO' segundo a metodologia, sem alternância previsível; as proporções são pedagógicas.
-- Identificar questões como geradas para prática; não sugerir que sejam itens oficiais. Na correção, associar cada lacuna a uma fonte adequada quando realmente consultada, explicar como a leitura ajuda e propor um próximo passo executável.
+- Combinar itens de `assets/banco-questoes.json` com questões geradas nas vagas restantes, preservando cotas por domínio. Identificar a origem e o estado real de revisão e sinalizar repetições. Nenhum item é oficial. Usar `python scripts/montar_avaliacao.py --mode quick` (ou `deep`/`full`) quando possível; sem execução, seguir `references/banco-revisao.md` manualmente.
 - Durante diagnóstico e simulado: **não revelar acertos, erros, dicas ou gabarito**, nem mesmo por elogios. Solicitar resposta (letra(s)) e confiança 1–3, registrar e seguir.
 - Preservar itens anulados com motivo, excluí-los das contas e recompor cobertura quando necessário; seguir `references/avaliacao.md`.
 - Separar percentual bruto de acertos, calibração de confiança e cobertura. Não misturar pontos de confiança com porcentagem de acertos. Um domínio com uma questão não é considerado dominado.
+- Destacar padrões de confiança: vários itens com 1, mesmo corretos, pedem estudo e justificativa; erros com 3 pedem revisão prioritária do conceito. Usar a fila de revisão e oferecer nova tentativa após o estudo, sem exigir confiança alta artificialmente.
 - **720/1000 é escala da prova, não conversão de acertos:** nunca estimar nota escalonada ou probabilidade de aprovação a partir de questões geradas.
 - Resolver comandos e referências a partir da pasta real desta skill. Para computação determinística, se houver execução Python: `python scripts/avaliar.py --allocate` e `python scripts/avaliar.py --input respostas.json`. Caso contrário, calcular manualmente segundo `references/metodologia.md`. Não declarar script executado sem execução.
 - Laboratórios usam casos fictícios. Nunca solicitar chave de API, dados de cliente ou credenciais de trabalho.
@@ -110,6 +112,7 @@ Se o usuário pedir um modo diretamente, começar esse modo sem impor menu. Quan
 - `references/escopo-base.md`: domínios, pesos, tópicos e fatos **transcritos da fonte**; as tabelas não equivalem a validação de todos os itens pelo portal oficial.
 - `references/fontes.md`: fontes declaradas pelo documento original e hash da base; não são comprovação de consulta aos guias oficiais.
 - `references/laboratorios.md`: atividades recomendadas que **não ampliam o syllabus**.
+- `references/banco-revisao.md`: montagem híbrida, procedência das questões, confiança e fila de revisão. O banco inclui gabaritos para uso do tutor; não exibi-los durante a aplicação.
 - `assets/progresso-template.json` e `assets/relatorio-template.md`: persistência manual e relatório para novas conversas; validar certificação/base/versão e preservar histórico conforme `references/avaliacao.md`.
 - Guias e cursos: https://anthropic-partners.skilljar.com/page/partner-certifications ; https://anthropic-partners.skilljar.com/page/claude-certification-exam-prep-courses ; https://www.pearsonvue.com/us/en/anthropic.html . Não inventar páginas de documentação específicas.
 
@@ -172,19 +175,27 @@ def main():
                       domains=domains)
         if not sum(cfg['deep']) > sum(cfg['quick']) > 0:
             raise RuntimeError('Totais de diagnóstico incompatíveis')
+        bank_path = ROOT/'tools'/('banco-ccdv.json' if cfg['code'] == 'CCDV-F' else 'banco-'+cfg['code'].lower()+'.json')
+        bank = json.loads(bank_path.read_text(encoding='utf-8')) if bank_path.exists() else dict(
+            schema_version='1.0', exam_code=cfg['code'], baseline='2026-11-10',
+            review_scope='Banco ainda sem itens; gerar questões seguindo o padrão de qualidade.', domains={})
+        validate_bank(manifest, bank)
+        write(skill/'assets'/'banco-questoes.json', json.dumps(bank,ensure_ascii=False,indent=2)+'\n')
         write(skill/'references'/'dominios.json',json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
         write(skill/'references'/'escopo-base.md',baseline[cfg['code']]['scope'])
         write(skill/'references'/'metodologia.md', METHOD)
         write(skill/'references'/'qualidade-questoes.md',QUALITY)
         write(skill/'references'/'avaliacao.md',ASSESSMENT)
+        write(skill/'references'/'banco-revisao.md', (ROOT/'tools'/'banco-revisao.md').read_text(encoding='utf-8'))
         if cfg['code'] == 'CCDV-F':
             write(skill/'references'/'roteiro-estudo.md', (ROOT/'tools'/'roteiro-ccdv.md').read_text(encoding='utf-8'))
         write(skill/'references'/'fontes.md',baseline[cfg['code']]['sources'])
         exercises='\n\n'.join(f'### {topic}\n\n{body}' for topic,body in cfg['exercises'])
         write(skill/'references'/'laboratorios.md',f'# Exercícios sugeridos para {cfg["code"]}\n\n**Atenção:** são exercícios pedagógicos gerados para esta skill, não exigências adicionais confirmadas pelo guia oficial. Usar apenas o escopo e domínios de `escopo-base.md`.\n\n{exercises}\n\n## Como avaliar\n\nPara cada atividade: estabelecer critério de aceite simples, pedir primeiro a decisão do estudante, apontar trade-off omitido, propor correção e registrar tópico que precisa de revisão.\n')
-        write(skill/'assets'/'progresso-template.json', json.dumps(dict(schema_version='1.1',exam_code=cfg['code'],skill_version=VERSION,source_baseline='2026-11-10',session_date=None,study_goal=None,planned_exam_date=None,study_schedule=dict(days_per_week=[],hours_per_day=None),profile=dict(experience=None,english=None,learning_style=None),evaluations=[],active_assessment=None,topic_history=[],domains={d['id']:dict(name=d['name'],questions_answered=0,correct=0,accuracy_percent=None,false_certainty_count=0,error_topics=[],notes=[]) for d in domains},next_actions=[],notes=['Preencher com resultados observados; não é boletim oficial.']),ensure_ascii=False,indent=2)+'\n')
-        write(skill/'assets'/'relatorio-template.md',f'# Relatório portável de estudo — {cfg["code"]}\n\n- Versão da skill: v{VERSION}; escopo-fonte: 10/11/2026\n- Data da sessão: [preencher]\n- Objetivo e data da prova, se houver: [preencher]\n- Modalidade: [diagnóstico rápido / aprofundado / simulado / prática]\n- Amostra: [N] questões de [N] domínios; cobertura dos subtópicos: [informar]\n\n| Domínio | Peso da fonte | Questões | Acertos | Acerto bruto | Falsa certeza | Lacunas |\n|---|---:|---:|---:|---:|---:|---|\n| [preencher] | | | | | | |\n\n**Limitações:** simulado original gerado por IA, resultado não é nota oficial escalonada nem previsão de aprovação.\n\n**Padrões de erro:** [preencher]\n\n**3–5 tópicos prioritários e exercícios:** [preencher]\n\n**Plano e próximos checkpoints:** [preencher]\n\n**Transferência:** copie este relatório para a nova conversa. Não incluir dados de cliente, chaves ou credenciais.\n')
+        write(skill/'assets'/'progresso-template.json', json.dumps(dict(schema_version='1.2',exam_code=cfg['code'],skill_version=VERSION,source_baseline='2026-11-10',session_date=None,study_goal=None,planned_exam_date=None,study_schedule=dict(days_per_week=[],hours_per_day=None),profile=dict(experience=None,english=None,learning_style=None),evaluations=[],active_assessment=None,topic_history=[],review_queue=[],domains={d['id']:dict(name=d['name'],questions_answered=0,correct=0,accuracy_percent=None,false_certainty_count=0,error_topics=[],notes=[]) for d in domains},next_actions=[],notes=['Preencher com resultados observados; não é boletim oficial.']),ensure_ascii=False,indent=2)+'\n')
+        write(skill/'assets'/'relatorio-template.md',f'# Relatório portável de estudo — {cfg["code"]}\n\n- Versão da skill: v{VERSION}; escopo-fonte: 10/11/2026\n- Data da sessão: [preencher]\n- Objetivo e data da prova, se houver: [preencher]\n- Modalidade: [diagnóstico rápido / aprofundado / simulado / prática]\n- Amostra: [N] questões de [N] domínios; cobertura dos subtópicos: [informar]\n\n| Domínio | Peso da fonte | Questões | Acertos | Acerto bruto | Falsa certeza | Lacunas |\n|---|---:|---:|---:|---:|---:|---|\n| [preencher] | | | | | | |\n\n**Confiança e revisão:** [N] respostas com confiança 1; [N] acertos com dúvida; [N] erros com confiança 3. [Tópicos e próxima tentativa após estudo.]\n\n**Limitações:** simulado original gerado por IA, resultado não é nota oficial escalonada nem previsão de aprovação.\n\n**Padrões de erro:** [preencher]\n\n**3–5 tópicos prioritários e exercícios:** [preencher]\n\n**Plano e próximos checkpoints:** [preencher]\n\n**Transferência:** copie este relatório para a nova conversa. Não incluir dados de cliente, chaves ou credenciais.\n')
         shutil.copy2(ROOT/'tools'/'avaliar.py',skill/'scripts'/'avaliar.py')
+        shutil.copy2(ROOT/'tools'/'montar_avaliacao.py',skill/'scripts'/'montar_avaliacao.py')
         quick_repr=', '.join(f'D{i+1}:{v}' for i,v in enumerate(cfg['quick']))
         deep_repr=', '.join(f'D{i+1}:{v}' for i,v in enumerate(cfg['deep']))
         desc=f'Preparação para {cfg["code"]}: diagnóstico por domínios, prática, simulados e plano de estudo. Usar para dúvidas, revisão ou treinamento dessa certificação Claude.'
@@ -200,7 +211,10 @@ def main():
     # zip consolidado para arquivamento / manutenção, não upload direto de skill
     with zipfile.ZipFile(ROOT.parent/f'claude-certification-skills-v{VERSION}-completo.zip','w',zipfile.ZIP_DEFLATED, compresslevel=9) as z:
         for p in sorted(ROOT.rglob('*')):
-            if p.is_file() and '__pycache__' not in p.parts:
+            relative = p.relative_to(ROOT)
+            if (p.is_file() and '__pycache__' not in p.parts and
+                    (relative.parts[0] in ('skills', 'tools', 'packages') or
+                     relative.as_posix() in ('README.md', '.gitignore', '.gitattributes'))):
                 z.write(p,arcname=p.relative_to(ROOT.parent).as_posix())
     print('Geradas 4 skills a partir da baseline versionada')
     for cfg in CONFIG:

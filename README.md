@@ -25,7 +25,11 @@ Ao escolher uma certificação, o tutor apresenta os domínios e recursos de est
 
 Para Developer Foundations, as opções são 16 questões, 32 questões ou um simulado de 53 questões conforme a baseline. A distribuição usa os pesos da baseline como aproximação e não é uma contagem oficial por domínio. A certificação pertence ao programa da Anthropic para parceiros; confirme elegibilidade e acesso na [FAQ oficial](https://anthropic-partners.skilljar.com/page/faq-certifications). O uso destas skills para estudar é independente da inscrição no exame.
 
-As questões são geradas para estudo, identificadas como `Generated for practice`, e não são oficiais. Os resultados indicam desempenho observado e não preveem aprovação. As skills não devem ser usadas para responder uma prova oficial em andamento ou acessar questões vazadas. Referências devem ser verificadas quando houver acesso à internet; sem consulta, sua pertinência deve ser sinalizada como não verificada.
+As questões são próprias de estudo. A skill combina itens do banco por domínio com questões geradas para preencher as vagas restantes, identificando a origem, o estado de revisão e eventuais repetições. Nenhuma questão é oficial. Os resultados indicam desempenho observado e não preveem aprovação. As skills não devem ser usadas para responder uma prova oficial em andamento ou acessar questões vazadas. Referências devem ser verificadas quando houver acesso à internet; sem consulta, sua pertinência deve ser sinalizada como não verificada.
+
+O banco piloto da Developer contém cinco questões em quatro domínios, com revisão documental assistida por IA e sem validação independente de especialista. Os outros bancos ainda estão vazios. A geração complementa as cotas que não forem preenchidas pelo banco. A preferência inicial é usar cerca de metade das vagas por domínio do banco, quando houver itens suficientes; não se trata de proporção oficial.
+
+Depois da correção, erros e acertos com confiança baixa entram numa fila de revisão. Após estudar o conceito, o tutor pergunta “Pronto para tentar de novo?”. O resultado original permanece preservado. Muitos itens com confiança 1 pedem estudo dirigido, mesmo quando corretos; erros com confiança 3 pedem revisão prioritária do critério de decisão. O progresso pode ser salvo pelo agente em arquivo da sessão, quando o ambiente permitir, ou exportado manualmente.
 
 ## Conteúdo e atualização
 
@@ -40,3 +44,5 @@ python tools/build_skills.py
 ```
 
 Cada skill inclui uma cópia independente de `scripts/avaliar.py`; a execução Python é opcional. Sem ela, o agente pode calcular os resultados manualmente seguindo a metodologia da skill.
+
+`scripts/montar_avaliacao.py --mode quick` (ou `deep`/`full`) cria um plano de questões do banco e vagas para geração, sem imprimir gabaritos. Dentro de cada skill, `references/banco-revisao.md` explica a seleção, a fila de revisão e a leitura dos padrões de confiança. Respostas pessoais devem ficar fora das pastas das skills e não devem ser incorporadas ao banco público.
