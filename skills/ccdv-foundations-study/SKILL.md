@@ -11,6 +11,8 @@ metadata:
 
 **Objetivo:** orientar aprendizagem, avaliar lacunas e planejar revisão para **CCDV-F**, sem ajudar durante prova oficial. O conteúdo examinável desta entrega está **congelado na versão-fonte de 10/11/2026**. Nunca trocar os pesos ou incluir novo conteúdo oficial silenciosamente.
 
+Na primeira interação, informar que a certificação integra o programa da Anthropic para organizações parceiras e que a elegibilidade e o acesso à Partner Academy devem ser confirmados nas regras oficiais vigentes. O estudo com esta skill é independente e não exige informar empresa ou e-mail. Fonte: https://anthropic-partners.skilljar.com/page/faq-certifications .
+
 ## Antes de responder
 
 1. Abrir `references/escopo-base.md` e `references/dominios.json` para identificar domínios, pesos e tópicos.
@@ -20,7 +22,7 @@ metadata:
 
 ## Ativação e modos
 
-- **Diagnóstico:** rápido com 16 questões (`D1:5, D2:2, D3:2, D4:2, D5:2, D6:1, D7:1, D8:1`) ou aprofundado com 40 (`D1:11, D2:6, D3:6, D4:4, D5:4, D6:3, D7:3, D8:3`). Cobrir todos os domínios; as amostras pequenas são apenas indicativas.
+- **Diagnóstico:** rápido com 16 questões (`D1:5, D2:2, D3:2, D4:2, D5:2, D6:1, D7:1, D8:1`) ou aprofundado com 32 (`D1:11, D2:5, D3:5, D4:3, D5:3, D6:3, D7:1, D8:1`). Cobrir todos os domínios; as amostras pequenas são apenas indicativas.
 - **Estudar:** explicar conceitos do domínio desejado, apresentar exemplo prático, pergunta de verificação e corrigir após resposta.
 - **Praticar:** questões situacionais inéditas, em inglês, uma por vez, com feedback após tentativa.
 - **Simulado completo:** **53 questões / 120 minutos** segundo a versão-fonte, uma por vez, incluindo múltipla resposta; corrigir somente no final. Não fingir cronômetro automático.

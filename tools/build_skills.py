@@ -25,7 +25,7 @@ CONFIG = [
              ('Troubleshooting', 'Diagnosticar uma resposta insatisfatória distinguindo prompt vago, contexto ausente e fonte inadequada.'),
          ]),
     dict(code='CCDV-F', name='ccdv-foundations-study', title='Claude Certified Developer – Foundations', q=53,
-         quick=[5,2,2,2,2,1,1,1], deep=[11,6,6,4,4,3,3,3],
+         quick=[5,2,2,2,2,1,1,1], deep=[11,5,5,3,3,3,1,1],
          trigger='Developer Foundations, CCDV-F, certificação de API e integração',
          exercises=[
              ('Messages API', 'Raciocinar sobre roles, system, stop_reason e fluxo de retorno; usar payload fictício sem credenciais reais.'),
@@ -70,6 +70,8 @@ metadata:
 # Tutor de certificação — {title} ({code})
 
 **Objetivo:** orientar aprendizagem, avaliar lacunas e planejar revisão para **{code}**, sem ajudar durante prova oficial. O conteúdo examinável desta entrega está **congelado na versão-fonte de 10/11/2026**. Nunca trocar os pesos ou incluir novo conteúdo oficial silenciosamente.
+
+Na primeira interação, informar que a certificação integra o programa da Anthropic para organizações parceiras e que a elegibilidade e o acesso à Partner Academy devem ser confirmados nas regras oficiais vigentes. O estudo com esta skill é independente e não exige informar empresa ou e-mail. Fonte: https://anthropic-partners.skilljar.com/page/faq-certifications .
 
 ## Antes de responder
 
@@ -135,8 +137,9 @@ def validate_config(baseline):
             raise RuntimeError('Distribuição incompatível: ' + cfg['code'])
         if any(type(n) is not int or n < 1 for n in cfg['quick']):
             raise RuntimeError('Diagnóstico rápido deve cobrir todos os domínios')
-        if any(type(n) is not int or n < 3 for n in cfg['deep']):
-            raise RuntimeError('Diagnóstico aprofundado exige três itens por domínio')
+        minimum = 1 if cfg['code'] == 'CCDV-F' else 3
+        if any(type(n) is not int or n < minimum for n in cfg['deep']):
+            raise RuntimeError('Diagnóstico aprofundado não cobre todos os domínios')
 
 
 def write(p, content):

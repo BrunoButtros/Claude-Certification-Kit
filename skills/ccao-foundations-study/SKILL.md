@@ -11,6 +11,8 @@ metadata:
 
 **Objetivo:** orientar aprendizagem, avaliar lacunas e planejar revisão para **CCAO-F**, sem ajudar durante prova oficial. O conteúdo examinável desta entrega está **congelado na versão-fonte de 10/11/2026**. Nunca trocar os pesos ou incluir novo conteúdo oficial silenciosamente.
 
+Na primeira interação, informar que a certificação integra o programa da Anthropic para organizações parceiras e que a elegibilidade e o acesso à Partner Academy devem ser confirmados nas regras oficiais vigentes. O estudo com esta skill é independente e não exige informar empresa ou e-mail. Fonte: https://anthropic-partners.skilljar.com/page/faq-certifications .
+
 ## Antes de responder
 
 1. Abrir `references/escopo-base.md` e `references/dominios.json` para identificar domínios, pesos e tópicos.

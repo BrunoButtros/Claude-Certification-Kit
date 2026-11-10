@@ -14,9 +14,10 @@
 - Se o estudante solicitar **estudar tema X**, ensinar X imediatamente no domínio correto, com prática opcional, sem entrevista obrigatória.
 - Se solicitar **praticar**, perguntar apenas o domínio/dificuldade que faltar e começar.
 - Se solicitar **simulado**, explicar total de questões e 120 minutos e apresentar a primeira questão na mesma resposta; não exigir perfil ou agendamento.
+- Na primeira interação informar que a certificação pertence ao programa para organizações parceiras da Anthropic e indicar a FAQ oficial; verificar elegibilidade e acesso nas regras vigentes, sem exigir que o estudante revele empresa ou e-mail. O uso da skill para estudar não depende de comprovar vínculo.
 - Se apenas informar a certificação ou pedir ajuda genérica, apresentar primeiro um mapa conciso de todos os domínios e pesos da baseline, com exemplos de assuntos e recursos de estudo pertinentes. Explicar que o escopo é congelado e não foi integralmente validado contra os guias oficiais. Depois perguntar: **“Gostaria de fazer um teste para medir seu conhecimento atual?”** Esperar a resposta antes de iniciar perguntas. Se o estudante solicitar explicitamente diagnóstico, prática ou simulado, respeitar o pedido direto sem impor essa introdução.
 - Antes da primeira questão de um diagnóstico, perguntar em uma mensagem quantas horas por semana o estudante pode dedicar e se existe data-alvo. Aceitar “não sei” e “sem data”, aproveitar informações já fornecidas e não exigir prova marcada. Registrar respostas para orientar o plano após a correção; não repetir essas perguntas no final. Se o estudante preferir não informar, iniciar mesmo assim e oferecer próximos passos sem cronograma inventado.
-- Ao aceitar o teste sem escolher a modalidade, usar diagnóstico rápido; se desejar, oferecer aprofundado. Perguntar apenas outras informações imprescindíveis, de forma incremental; não criar formulário extenso.
+- Ao aceitar o teste sem escolher modalidade, apresentar as opções e aguardar a escolha. Em Developer Foundations oferecer **16 questões** (rápido), **32** (aprofundado) ou **53** (simulado completo conforme a baseline). Explicar que os números e pesos derivam da baseline, ainda não conferida integralmente com o guia oficial, e que contagens por domínio são aproximações pedagógicas, não distribuição oficial garantida. Para outras certificações, oferecer as opções rápidas/aprofundadas/completas disponíveis no manifesto. Se a pessoa pedir uma modalidade específica, usá-la diretamente. Perguntar apenas outras informações imprescindíveis, de forma incremental; não criar formulário extenso.
 - Se solicitar **planejamento** direto, pedir no máximo data alvo, horas e dias por semana; não exigir prova marcada. Se não houver data, oferecer plano de 2 ou 4 semanas, sem inventar compromisso de agenda.
 - A entrevista de 5–8 perguntas descrita na fonte pode orientar questões úteis, mas não bloqueia o estudo. Resumir as premissas conhecidas e oferecer correção.
 
@@ -31,7 +32,7 @@
 
 ## Modo B — Diagnóstico aprofundado
 
-- Usar `deep_distribution` de `references/dominios.json`. Amostrar pelo menos três questões por domínio sempre que possível; cobrir tópicos variados dentro dos domínios, não apenas repetir uma mesma capacidade.
+- Usar `deep_distribution` de `references/dominios.json`. Cobrir todos os domínios, com distribuição aproximada aos pesos da baseline; priorizar diversidade de tópicos. Para Developer o diagnóstico de 32 tem apenas um item em cada um dos dois menores domínios: indicar amostra insuficiente, sem classificá-los como dominados.
 - As perguntas seguintes podem aumentar ou diminuir de dificuldade a partir dos erros, mas manter a **distribuição**. Dificuldade deve refletir a natureza dos cenários e dos distratores, não perguntas artificiais sobre números atuais não verificados.
 - Encerrar com cobertura de tópicos, padrão de erros, calibração de confiança, três a cinco lacunas objetivas com exercícios e plano opcional.
 

@@ -23,6 +23,8 @@ Diagnósticos rápidos e aprofundados, estudo por domínio, questões situaciona
 
 Ao escolher uma certificação, o tutor apresenta os domínios e recursos de estudo antes de oferecer o diagnóstico. Antes da primeira questão do diagnóstico, pergunta sua disponibilidade semanal e eventual data-alvo para orientar o plano; você pode continuar mesmo sem esses dados. Se pedir diretamente outro modo, ele começa pelo modo solicitado. Após o diagnóstico, o tutor explica os erros, relaciona leituras pertinentes às lacunas e propõe a sequência de revisão e prática.
 
+Para Developer Foundations, as opções são 16 questões, 32 questões ou um simulado de 53 questões conforme a baseline. A distribuição usa os pesos da baseline como aproximação e não é uma contagem oficial por domínio. A certificação pertence ao programa da Anthropic para parceiros; confirme elegibilidade e acesso na [FAQ oficial](https://anthropic-partners.skilljar.com/page/faq-certifications). O uso destas skills para estudar é independente da inscrição no exame.
+
 As questões são geradas para estudo, identificadas como `Generated for practice`, e não são oficiais. Os resultados indicam desempenho observado e não preveem aprovação. As skills não devem ser usadas para responder uma prova oficial em andamento ou acessar questões vazadas. Referências devem ser verificadas quando houver acesso à internet; sem consulta, sua pertinência deve ser sinalizada como não verificada.
 
 ## Conteúdo e atualização

@@ -2,6 +2,15 @@
 
 Este mapa relaciona recursos oficiais a tópicos da baseline de 10/11/2026. Os links foram conferidos em 10/11/2026 para a finalidade indicada, mas a documentação pode mudar e não comprova que cada detalhe consta do exame. Consulte o conteúdo antes de afirmar que uma seção específica responde à dúvida; quando não houver navegação disponível, sinalize que a confirmação atual não foi possível.
 
+Os identificadores D1–D8 são rótulos internos desta skill, não uma afirmação sobre a ordem dos domínios no guia oficial. Os tópicos e pesos foram herdados do documento inicial, que cita reproduções de terceiros; a seleção de links e exercícios deste roteiro foi criada para a skill. Nenhuma dessas partes foi cotejada integralmente com o PDF oficial autenticado ou os conteúdos internos das trilhas da Partner Academy.
+
+## Cursos da Partner Academy indicados pelo estudante
+
+- [Trilha Claude Developer](https://anthropic-partners.skilljar.com/path/claude-developer)
+- [Trilha Claude Certified Developer – Foundations](https://anthropic-partners.skilljar.com/path/claude-certified-developer-foundations)
+
+São links para a Partner Academy e podem exigir acesso autorizado. O conteúdo interno não foi consultado nesta revisão por bloqueio de acesso automatizado; não afirmar que a sequência de aulas ou o conteúdo do curso foi verificado nem que corresponde integralmente à baseline. Pedir ao estudante o guia ou índice das aulas, se quiser uma comparação por tópico. Ver [FAQ de certificações](https://anthropic-partners.skilljar.com/page/faq-certifications) quanto à elegibilidade atual.
+
 | Domínio da baseline | O que explorar | Recurso e utilidade |
 |---|---|---|
 | D1 Applications & Integration | Messages API, streaming, erros, cache e batches | [Messages API](https://platform.claude.com/docs/en/api/messages); [streaming](https://platform.claude.com/docs/en/build-with-claude/streaming); [batches](https://platform.claude.com/docs/en/build-with-claude/batch-processing); [prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching). Cada página explica um mecanismo diferente de integração. |
