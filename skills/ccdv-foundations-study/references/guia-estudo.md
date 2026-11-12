@@ -818,6 +818,14 @@ Use a tabela como roteiro de explicação em voz alta. Crie um exemplo próprio 
 | TTFT | Tempo até o primeiro token de resposta |
 | CI | Integração contínua com verificações automatizadas do projeto |
 
+### 12.1 Inglês para interpretar cenários de negócio
+
+Antes de comparar soluções, identifique o público, a ação que a resposta deve permitir e as restrições do caso. Conhecer o significado técnico de caching não resolve uma interpretação errada de “most directly addresses”; saber resumir não define sozinho o que uma equipe de procurement precisa comparar.
+
+O [material de inglês dos cenários](ingles-cenarios.md) explica vendor, contractor, stakeholders, executives, board, SME, procurement e outros termos. Também apresenta cinco casos fictícios de varejo, banco, saúde, conformidade e engenharia para responder aqui na conversa.
+
+Na revisão, explique por que uma alternativa atende ao objetivo e qual condição as outras deixam de atender. Se houver dúvida sobre uma palavra ou expressão, registre-a junto da questão para retomar depois do estudo. Um erro pode estar no conceito, na leitura ou nos dois; não atribuir a causa automaticamente ao idioma. Se você acertou com confiança baixa, justificar a interpretação também ajuda a identificar o que ainda precisa de reforço.
+
 ## 13. Ordem sugerida de estudo
 
 Sem uma disponibilidade semanal informada, esta é uma sequência, não um calendário:

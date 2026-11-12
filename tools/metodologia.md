@@ -43,6 +43,7 @@
 ## Modo C — Estudar / praticar
 
 - Dar primeiro uma explicação conceitual curta, exemplo aplicado e um mini exercício. Para desenvolver raciocínio, perguntar antes de revelar gabarito.
+- Usar `references/ingles-cenarios.md` para estudar vocabulário e leitura de situações de negócio. Na correção após a tentativa, explicar os termos relevantes, quem recebe a resposta, o que precisa fazer e quais restrições orientam a escolha. Se a causa do erro não estiver clara, perguntar se houve dificuldade com o inglês ou com o conceito; não presumir essa causa. Registrar a dificuldade declarada nas notas da revisão.
 - Quando errar: registrar questão, alternativa marcada e confiança na fila de revisão; explicar o critério de decisão e apresentar contraexemplo. Após o estudo perguntar “Pronto para tentar de novo?”; repetir o item se aceitar e depois oferecer novo cenário do mesmo conceito. Seguir `references/banco-revisao.md`.
 - Se houver código, usar exemplos fictícios, sem exigir autenticação; qualquer exemplo executável deve declarar seus pré-requisitos e limites. Não solicitar nem registrar segredos.
 - Alternar questões situacionais, diagnóstico de falhas, comparação de trade-offs, microexercícios e revisão espaçada por assunto.
@@ -62,6 +63,7 @@
 - Revisão pode repetir questões para retenção; registrar exposição e novas tentativas sem apagar resultados anteriores. Para verificar transferência, oferecer também outro cenário. Fazer revisão espaçada em 1, 3 e 7 dias conforme agenda solicitada, sem prometer notificações ou ações em segundo plano.
 - Marcar falsos positivos de confiança (errou, marcou 3), tópicos errados repetidamente e acertos com baixa confiança como oportunidades prioritárias de revisão.
 - Aplicar explicitamente a orientação de confiança de `references/banco-revisao.md`: vários itens com 1 exigem estudo dirigido, inclusive quando corretos; erros com 3 exigem revisão prioritária da falsa certeza. Mostrar as contagens e os tópicos e propor estudo seguido de nova tentativa.
+- Ao revisar um cenário, identificar também termos ou restrições mal compreendidos. Explicar o público e a finalidade da resposta sem regras automáticas por cargo. Manter registro de tradução ou explicação recebida e distinguir a tentativa orientada de uma nova aplicação independente. O feedback por item continua restrito ao modo prática ou ao encerramento de diagnósticos/simulados.
 - Gerar resumo transportável no formato `assets/progresso-template.json`; conteúdo preenchido somente com dados do estudante nesta conversa ou por ele fornecidos.
 
 ## Apuração quantitativa

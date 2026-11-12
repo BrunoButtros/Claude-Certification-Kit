@@ -53,6 +53,7 @@ Se o usuário pedir um modo diretamente, começar esse modo sem impor menu. Quan
 - `references/inicio.md`: apresentação pronta, domínios e recursos de estudo. Usar diretamente ao selecionar a certificação.
 - `references/fontes.md`: fontes declaradas pelo documento original e hash da base; não são comprovação de consulta aos guias oficiais.
 - `references/laboratorios.md`: atividades recomendadas que **não ampliam o syllabus**.
+- `references/ingles-cenarios.md`: vocabulário de negócio, interpretação de públicos/objetivos e casos guiados. Consultar no estudo e na correção de dúvidas de leitura; não antecipar dicas durante diagnóstico/simulado.
 - `references/banco-revisao.md`: montagem híbrida, procedência das questões, confiança e fila de revisão. O banco inclui gabaritos para uso do tutor; não exibi-los durante a aplicação.
 - `assets/progresso-template.json` e `assets/relatorio-template.md`: persistência manual e relatório para novas conversas; validar certificação/base/versão e preservar histórico conforme `references/avaliacao.md`.
 - Guias e cursos: https://anthropic-partners.skilljar.com/page/partner-certifications ; https://anthropic-partners.skilljar.com/page/claude-certification-exam-prep-courses ; https://www.pearsonvue.com/us/en/anthropic.html . Não inventar páginas de documentação específicas.

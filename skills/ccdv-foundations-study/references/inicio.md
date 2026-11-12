@@ -24,6 +24,7 @@ Base de conteúdo: 10/11/2026. Os domínios e pesos abaixo são os da baseline, 
 - [Vídeos de apoio da Anthropic](videos-estudo.md): seleção por assunto e perguntas para revisar depois.
 - [Trilha Claude Developer](https://anthropic-partners.skilljar.com/path/claude-developer).
 - [Preparação Developer Foundations](https://anthropic-partners.skilljar.com/path/claude-certified-developer-foundations).
+- [Inglês dos cenários](ingles-cenarios.md): públicos, vocabulário de negócio, objetivos e restrições.
 
 Os links fazem parte do material salvo; sua presença não significa que foram consultados nesta sessão. Os cursos da Partner Academy podem exigir acesso autorizado.
 

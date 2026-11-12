@@ -21,6 +21,7 @@ Base de conteúdo: 10/11/2026. Os domínios e pesos abaixo são os da baseline, 
 - [Escopo por domínio](escopo-base.md).
 - [Fontes de referência](fontes.md).
 - [Certificações e preparação na Partner Academy](https://anthropic-partners.skilljar.com/page/partner-certifications).
+- [Inglês dos cenários](ingles-cenarios.md): públicos, vocabulário de negócio, objetivos e restrições.
 
 Os links fazem parte do material salvo; sua presença não significa que foram consultados nesta sessão. Os cursos da Partner Academy podem exigir acesso autorizado.
 

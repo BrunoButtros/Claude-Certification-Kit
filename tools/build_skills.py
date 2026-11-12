@@ -114,6 +114,7 @@ Se o usuário pedir um modo diretamente, começar esse modo sem impor menu. Quan
 - `references/inicio.md`: apresentação pronta, domínios e recursos de estudo. Usar diretamente ao selecionar a certificação.
 - `references/fontes.md`: fontes declaradas pelo documento original e hash da base; não são comprovação de consulta aos guias oficiais.
 - `references/laboratorios.md`: atividades recomendadas que **não ampliam o syllabus**.
+- `references/ingles-cenarios.md`: vocabulário de negócio, interpretação de públicos/objetivos e casos guiados. Consultar no estudo e na correção de dúvidas de leitura; não antecipar dicas durante diagnóstico/simulado.
 - `references/banco-revisao.md`: montagem híbrida, procedência das questões, confiança e fila de revisão. O banco inclui gabaritos para uso do tutor; não exibi-los durante a aplicação.
 - `assets/progresso-template.json` e `assets/relatorio-template.md`: persistência manual e relatório para novas conversas; validar certificação/base/versão e preservar histórico conforme `references/avaliacao.md`.
 - Guias e cursos: https://anthropic-partners.skilljar.com/page/partner-certifications ; https://anthropic-partners.skilljar.com/page/claude-certification-exam-prep-courses ; https://www.pearsonvue.com/us/en/anthropic.html . Não inventar páginas de documentação específicas.
@@ -163,6 +164,7 @@ def introduction(cfg, domains):
                  if cfg['code'] == 'CCDV-F' else
                  '- [Escopo por domínio](escopo-base.md).\n- [Fontes de referência](fontes.md).\n'
                  '- [Certificações e preparação na Partner Academy](https://anthropic-partners.skilljar.com/page/partner-certifications).')
+    materials += '\n- [Inglês dos cenários](ingles-cenarios.md): públicos, vocabulário de negócio, objetivos e restrições.'
     return (f'# {cfg["title"]} ({cfg["code"]})\n\n'
             'Esta certificação integra o programa da Anthropic para organizações parceiras. Confirme elegibilidade e acesso na [FAQ oficial](https://anthropic-partners.skilljar.com/page/faq-certifications); estudar com esta skill não exige informar empresa ou e-mail.\n\n'
             '## Conteúdo desta preparação\n\nBase de conteúdo: 10/11/2026. Os domínios e pesos abaixo são os da baseline, ainda não integralmente conferida com o guia oficial autenticado.\n\n'
@@ -211,6 +213,7 @@ def main():
         write(skill/'references'/'qualidade-questoes.md',QUALITY)
         write(skill/'references'/'avaliacao.md',ASSESSMENT)
         write(skill/'references'/'banco-revisao.md', (ROOT/'tools'/'banco-revisao.md').read_text(encoding='utf-8'))
+        write(skill/'references'/'ingles-cenarios.md', (ROOT/'tools'/'ingles-cenarios.md').read_text(encoding='utf-8'))
         if cfg['code'] == 'CCDV-F':
             write(skill/'references'/'roteiro-estudo.md', (ROOT/'tools'/'roteiro-ccdv.md').read_text(encoding='utf-8'))
             write(skill/'references'/'guia-estudo.md', (ROOT/'tools'/'guia-ccdv.md').read_text(encoding='utf-8'))
